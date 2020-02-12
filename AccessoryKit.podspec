@@ -13,6 +13,7 @@ A customizable, expandable, and easy-to-use input accessory view component for i
   s.source           = { :git => 'https://github.com/xnth97/AccessoryKit.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
+  s.swift_version = '5.0'
 
   s.source_files = 'AccessoryKit/Classes/**/*'
   s.resources = 'AccessoryKit/Assets/*.xcassets'

@@ -22,7 +22,8 @@ The main features are:
 
 ### Requirements
 
-* iOS 10.0 and above
+* iOS 10.0+
+* Swift 5.0+
 
 ### Installation
 
