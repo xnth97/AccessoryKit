@@ -1,0 +1,16 @@
+PODS:
+  - AccessoryKit (0.1.0)
+
+DEPENDENCIES:
+  - AccessoryKit (from `../`)
+
+EXTERNAL SOURCES:
+  AccessoryKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AccessoryKit: 98b242733deda4d6dda410d091c3a61f904eab6b
+
+PODFILE CHECKSUM: 71ba08049996c0cee05530889ad335543ac96aac
+
+COCOAPODS: 1.8.4

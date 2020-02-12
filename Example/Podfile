@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AccessoryKit_Example' do
+  pod 'AccessoryKit', :path => '../'
+
+  target 'AccessoryKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

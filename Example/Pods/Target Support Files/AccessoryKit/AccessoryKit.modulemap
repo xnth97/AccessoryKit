@@ -1,0 +1,6 @@
+framework module AccessoryKit {
+  umbrella header "AccessoryKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
