@@ -56,13 +56,13 @@ public class KeyboardAccessoryView: UIView {
     ///   - showDismissKeyboardKey: If show the dismiss keyboard key on the right of scrollable area.
     ///   - delegate: Delegate object that implements `KeyboardAccessoryViewDelegate`.
     public init(frame: CGRect = .zero,
-         keyWidth: CGFloat = KeyboardAccessoryView.defaultKeyWidth,
-         keyHeight: CGFloat = KeyboardAccessoryView.defaultKeyHeight,
-         keyCornerRadius: CGFloat = KeyboardAccessoryView.defaultKeyCornerRadius,
-         keyMargin: CGFloat = KeyboardAccessoryView.defaultKeyMargin,
-         keyButtons: [KeyboardAccessoryButton] = [],
-         showDismissKeyboardKey: Bool = true,
-         delegate: KeyboardAccessoryViewDelegate?) {
+                keyWidth: CGFloat = KeyboardAccessoryView.defaultKeyWidth,
+                keyHeight: CGFloat = KeyboardAccessoryView.defaultKeyHeight,
+                keyCornerRadius: CGFloat = KeyboardAccessoryView.defaultKeyCornerRadius,
+                keyMargin: CGFloat = KeyboardAccessoryView.defaultKeyMargin,
+                keyButtons: [KeyboardAccessoryButton] = [],
+                showDismissKeyboardKey: Bool = true,
+                delegate: KeyboardAccessoryViewDelegate?) {
         self.keyWidth = keyWidth
         self.keyHeight = keyHeight
         self.keyCornerRadius = keyCornerRadius
@@ -103,7 +103,13 @@ public class KeyboardAccessoryView: UIView {
             keysScrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
         
-        if let image = UIImage(named: "dismiss_keyboard", in: Bundle(for: KeyboardAccessoryView.self), compatibleWith: nil), showDismissKeyboardKey {
+        var keyboardDismissImage: UIImage?
+        if #available(iOS 13.0, *) {
+            keyboardDismissImage = UIImage(systemName: "keyboard.chevron.compact.down")
+        } else {
+            keyboardDismissImage = UIImage(named: "dismiss_keyboard", in: Bundle(for: KeyboardAccessoryView.self), compatibleWith: nil)
+        }
+        if let image = keyboardDismissImage, showDismissKeyboardKey {
             let dismissKey = KeyboardAccessoryButton(image: image, tapHandler: { [weak self] in
                 self?.dismissKeyboardKeyTapped()
             })
@@ -158,6 +164,14 @@ public class KeyboardAccessoryView: UIView {
         delegate?.dismissKeyboardButtonTapped?()
     }
     
+    public override var tintColor: UIColor! {
+        didSet {
+            for button in keyButtonViews {
+                button.tintColor = self.tintColor
+            }
+        }
+    }
+    
     // MARK: - APIs
     
     /// Set `isEnabled` value on the key of a given index.
@@ -169,6 +183,17 @@ public class KeyboardAccessoryView: UIView {
             return
         }
         keyButtonViews[index].isEnabled = enabled
+    }
+    
+    /// Set `tintColor` value on the key of a given index.
+    /// - Parameters:
+    ///   - tintColor: Tint color to be set.
+    ///   - index: Index of key in `KeyboardAccessoryView`.
+    public func setTintColor(_ tintColor: UIColor, at index: Int) {
+        guard index >= 0 && index < keyButtonViews.count else {
+            return
+        }
+        keyButtonViews[index].tintColor = tintColor
     }
     
 }

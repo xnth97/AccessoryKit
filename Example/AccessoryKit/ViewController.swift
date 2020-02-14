@@ -40,6 +40,13 @@ class ViewController: UIViewController {
             keyButtons: keyButtons,
             showDismissKeyboardKey: true,
             delegate: self)
+        if #available(iOS 13.0, *) {
+            accessoryView.tintColor = .systemPink
+            accessoryView.setTintColor(.systemGreen, at: 5)
+        } else {
+            accessoryView.tintColor = .red
+            accessoryView.setTintColor(.green, at: 5)
+        }
         textView.inputAccessoryView = accessoryView
         textView.delegate = self
         textView.alwaysBounceVertical = true

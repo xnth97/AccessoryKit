@@ -17,6 +17,7 @@ The main features are:
 * Scrollable input accessory view with blurry background and customizable buttons.
 * Supports Auto Layout and Safe Area.
 * Supports dark mode.
+* Provides built-in pre-defined buttons with Google Material Icon or SF Symbol.
 
 ## Usage
 
@@ -57,13 +58,22 @@ let accessoryView = KeyboardAccessoryView(
 
 // Assign the accessory view instance to `UITextView`
 textView.inputAccessoryView = accessoryView
+
+// Set tint color for the whole view
+accessoryView.tintColor = .systemPink
+// ...or at a given index
+accessoryView.setTintColor(.systemGreen, at: 5)
+
+// Set enabled at a given index
+accessoryView.setEnabled(false, at: 1)
 ```
 
 ## TODO
 
-- [ ] Swift Package Manager
-- [ ] Tint color
+- [ ] Expose more APIs customization
+- [x] Tint color
 - [ ] Tweak UI
+- [x] Use SF Symbol
 
 ## License
 
