@@ -105,9 +105,9 @@ class KeyboardAccessoryButtonView: UIButton {
         
         setImage(viewModel.image, for: .normal)
         if #available(iOS 13.0, *) {
-            backgroundColor = .systemGray5
+            backgroundColor = .tertiarySystemGroupedBackground
         } else {
-            backgroundColor = UIColor(white: 0.8, alpha: 1.0)
+            backgroundColor = UIColor(red:0.94, green:0.94, blue:0.96, alpha:1.0)
         }
         
         clipsToBounds = true

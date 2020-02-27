@@ -16,7 +16,7 @@ import UIKit
 }
 
 /// The `UIView` class that works as the `inputAccessoryView`, usually looks like a toolbar on top of the screen keyboard.
-public class KeyboardAccessoryView: UIView {
+public class KeyboardAccessoryView: UIInputView {
     
     // Constants
     public static let defaultKeyWidth: CGFloat = 60.0
@@ -26,11 +26,6 @@ public class KeyboardAccessoryView: UIView {
     
     private let keysScrollView = UIScrollView(frame: .zero)
     private let keysStackView = UIStackView(frame: .zero)
-    private let backgroundView: UIVisualEffectView = {
-        let effect = UIBlurEffect(style: .regular)
-        let v = UIVisualEffectView(effect: effect)
-        return v
-    }()
     
     private let keyMargin: CGFloat
     private let keyWidth: CGFloat
@@ -48,6 +43,7 @@ public class KeyboardAccessoryView: UIView {
     /// Initializer of `KeyboardAccessoryView`
     /// - Parameters:
     ///   - frame: The frame rectangle, which describes the view’s location and size in its superview’s coordinate system.
+    ///   - inputViewStyle: The style to use when altering the appearance of the view and its subviews.
     ///   - keyWidth: The width of each key inside `KeyboardAccessoryView`.
     ///   - keyHeight: The height of each key inside `KeyboardAccessoryView`.
     ///   - keyCornerRadius: The corner radius of each key inside `KeyboardAccessoryView`.
@@ -56,6 +52,7 @@ public class KeyboardAccessoryView: UIView {
     ///   - showDismissKeyboardKey: If show the dismiss keyboard key on the right of scrollable area.
     ///   - delegate: Delegate object that implements `KeyboardAccessoryViewDelegate`.
     public init(frame: CGRect = .zero,
+                inputViewStyle: UIInputView.Style = .keyboard,
                 keyWidth: CGFloat = KeyboardAccessoryView.defaultKeyWidth,
                 keyHeight: CGFloat = KeyboardAccessoryView.defaultKeyHeight,
                 keyCornerRadius: CGFloat = KeyboardAccessoryView.defaultKeyCornerRadius,
@@ -74,7 +71,7 @@ public class KeyboardAccessoryView: UIView {
         self.delegate = delegate
         
         let newFrame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: 2 * keyMargin + keyHeight)
-        super.init(frame: newFrame)
+        super.init(frame: newFrame, inputViewStyle: inputViewStyle)
         setupViews()
     }
     
@@ -84,15 +81,6 @@ public class KeyboardAccessoryView: UIView {
     
     private func setupViews() {
         var constraints: [NSLayoutConstraint] = []
-        
-        addSubview(backgroundView)
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        constraints.append(contentsOf: [
-            backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            backgroundView.topAnchor.constraint(equalTo: topAnchor),
-            backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
-        ])
         
         addSubview(keysScrollView)
         keysScrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -162,14 +150,6 @@ public class KeyboardAccessoryView: UIView {
     
     private func dismissKeyboardKeyTapped() {
         delegate?.dismissKeyboardButtonTapped?()
-    }
-    
-    public override var tintColor: UIColor! {
-        didSet {
-            for button in keyButtonViews {
-                button.tintColor = self.tintColor
-            }
-        }
     }
     
     // MARK: - APIs

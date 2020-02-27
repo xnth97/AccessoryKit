@@ -1,6 +1,6 @@
 {
   "name": "AccessoryKit",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "summary": "A customizable, expandable, and easy-to-use input accessory view component for iOS.",
   "description": "A customizable, expandable, and easy-to-use input accessory view component for iOS.",
   "homepage": "https://github.com/xnth97/AccessoryKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/xnth97/AccessoryKit.git",
-    "tag": "0.1.0"
+    "tag": "0.3.0"
   },
   "platforms": {
     "ios": "10.0"
