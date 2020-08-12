@@ -1,5 +1,5 @@
 PODS:
-  - AccessoryKit (0.3.0)
+  - AccessoryKit (0.4.0)
 
 DEPENDENCIES:
   - AccessoryKit (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AccessoryKit: 80a5c796bceebc28a0824500676f424803cfbef4
+  AccessoryKit: 445c17d81a18256ab2fa79927defa93809e3b03b
 
 PODFILE CHECKSUM: 71ba08049996c0cee05530889ad335543ac96aac
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

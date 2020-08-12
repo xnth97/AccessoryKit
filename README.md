@@ -17,14 +17,14 @@ The main features are:
 * Scrollable input accessory view with blurry background and customizable buttons.
 * Supports Auto Layout and Safe Area.
 * Supports dark mode.
-* Provides built-in pre-defined buttons with Google Material Icon or SF Symbol.
+* Provides built-in pre-defined buttons with SF Symbol.
 
 ## Usage
 
 ### Requirements
 
-* iOS 10.0+
-* Swift 5.0+
+* iOS 13.0+
+* Swift 5.3+
 
 ### Installation
 
@@ -74,6 +74,7 @@ accessoryView.setEnabled(false, at: 1)
 - [x] Tint color
 - [ ] Tweak UI
 - [x] Use SF Symbol
+- [x] SPM support
 
 ## License
 
