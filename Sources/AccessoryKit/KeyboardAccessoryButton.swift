@@ -74,12 +74,14 @@ public class KeyboardAccessoryButton {
 class KeyboardAccessoryButtonView: UIButton {
     
     private let viewModel: KeyboardAccessoryButton
+    private let viewSize: CGSize
     
     init(viewModel: KeyboardAccessoryButton,
          width: CGFloat,
          height: CGFloat,
          cornerRadius: CGFloat) {
         self.viewModel = viewModel
+        viewSize = CGSize(width: width, height: height)
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: height))
         
         setImage(viewModel.image, for: .normal)
@@ -97,6 +99,10 @@ class KeyboardAccessoryButtonView: UIButton {
     
     @objc func tapHandlerAction() {
         viewModel.tapHandler()
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return viewSize
     }
     
 }

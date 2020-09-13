@@ -24,8 +24,9 @@ public class KeyboardAccessoryView: UIInputView {
     public static let defaultKeyCornerRadius: CGFloat = 8.0
     public static let defaultKeyMargin: CGFloat = 8.0
     
-    private let keysScrollView = UIScrollView(frame: .zero)
-    private let keysStackView = UIStackView(frame: .zero)
+    private let container = UIView()
+    private let keysScrollView = UIScrollView()
+    private let keysStackView = UIStackView()
     
     private let keyMargin: CGFloat
     private let keyWidth: CGFloat
@@ -79,6 +80,8 @@ public class KeyboardAccessoryView: UIInputView {
                               height: 2 * keyMargin + keyHeight)
         super.init(frame: newFrame, inputViewStyle: inputViewStyle)
         setupViews()
+        
+        autoresizingMask = .flexibleHeight
     }
     
     required init?(coder: NSCoder) {
@@ -88,13 +91,23 @@ public class KeyboardAccessoryView: UIInputView {
     private func setupViews() {
         var constraints: [NSLayoutConstraint] = []
         
-        addSubview(keysScrollView)
+        addSubview(container)
+        container.translatesAutoresizingMaskIntoConstraints = false
+        constraints.append(contentsOf: [
+            container.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            container.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            container.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            container.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            container.heightAnchor.constraint(equalToConstant: accessoryViewHeight),
+        ])
+        
+        container.addSubview(keysScrollView)
         keysScrollView.translatesAutoresizingMaskIntoConstraints = false
         keysScrollView.alwaysBounceHorizontal = true
         constraints.append(contentsOf: [
-            keysScrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            keysScrollView.topAnchor.constraint(equalTo: topAnchor),
-            keysScrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            keysScrollView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            keysScrollView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+            keysScrollView.heightAnchor.constraint(equalToConstant: keyHeight),
         ])
         
         let keyboardDismissImage = UIImage(systemName: "keyboard.chevron.compact.down")
@@ -106,16 +119,16 @@ public class KeyboardAccessoryView: UIInputView {
                                                              width: keyWidth,
                                                              height: keyHeight,
                                                              cornerRadius: keyCornerRadius)
-            addSubview(dismissKeyView)
+            container.addSubview(dismissKeyView)
             constraints.append(contentsOf: [
                 dismissKeyView.widthAnchor.constraint(equalToConstant: keyWidth),
                 dismissKeyView.heightAnchor.constraint(equalToConstant: keyHeight),
-                dismissKeyView.centerYAnchor.constraint(equalTo: centerYAnchor),
-                dismissKeyView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -keyMargin),
+                dismissKeyView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+                dismissKeyView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -keyMargin),
                 keysScrollView.trailingAnchor.constraint(equalTo: dismissKeyView.leadingAnchor, constant: -keyMargin),
             ])
         } else {
-            constraints.append(keysScrollView.trailingAnchor.constraint(equalTo: trailingAnchor))
+            constraints.append(keysScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor))
         }
         
         keysScrollView.addSubview(keysStackView)
@@ -124,8 +137,8 @@ public class KeyboardAccessoryView: UIInputView {
         keysStackView.spacing = keyMargin
         constraints.append(contentsOf: [
             keysStackView.leadingAnchor.constraint(equalTo: keysScrollView.leadingAnchor, constant: keyMargin),
-            keysStackView.heightAnchor.constraint(equalTo: keysScrollView.heightAnchor, constant: -2 * keyMargin),
             keysStackView.centerYAnchor.constraint(equalTo: keysScrollView.centerYAnchor),
+            keysStackView.heightAnchor.constraint(equalToConstant: keyHeight),
         ])
         
         for buttonViewItem in keyButtonViews {
@@ -143,11 +156,6 @@ public class KeyboardAccessoryView: UIInputView {
     
     private func addAccessoryKey(keyView: UIView) {
         keysStackView.addArrangedSubview(keyView)
-        NSLayoutConstraint.activate([
-            keyView.widthAnchor.constraint(equalToConstant: keyWidth),
-            keyView.heightAnchor.constraint(equalToConstant: keyHeight),
-            keyView.centerYAnchor.constraint(equalTo: keysStackView.centerYAnchor),
-        ])
     }
     
     private func dismissKeyboardKeyTapped() {
@@ -176,6 +184,10 @@ public class KeyboardAccessoryView: UIInputView {
             return
         }
         keyButtonViews[index].tintColor = tintColor
+    }
+    
+    public override var intrinsicContentSize: CGSize {
+        return CGSize(width: UIView.noIntrinsicMetric, height: accessoryViewHeight)
     }
     
 }
