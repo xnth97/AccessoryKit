@@ -18,12 +18,13 @@ import UIKit
 /// The `UIView` class that works as the `inputAccessoryView`, usually looks like a toolbar on top of the screen keyboard.
 public class KeyboardAccessoryView: UIInputView {
     
-    // Constants
+    /// Constants
     public static let defaultKeyWidth: CGFloat = 60.0
     public static let defaultKeyHeight: CGFloat = 40.0
     public static let defaultKeyCornerRadius: CGFloat = 8.0
     public static let defaultKeyMargin: CGFloat = 8.0
     
+    /// Properties
     private let container = UIView()
     private let keysScrollView = UIScrollView()
     private let keysStackView = UIStackView()
@@ -128,7 +129,7 @@ public class KeyboardAccessoryView: UIInputView {
                 keysScrollView.trailingAnchor.constraint(equalTo: dismissKeyView.leadingAnchor, constant: -keyMargin),
             ])
         } else {
-            constraints.append(keysScrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor))
+            constraints.append(keysScrollView.trailingAnchor.constraint(equalTo: container.trailingAnchor))
         }
         
         keysScrollView.addSubview(keysStackView)
@@ -162,6 +163,10 @@ public class KeyboardAccessoryView: UIInputView {
         delegate?.dismissKeyboardButtonTapped?()
     }
     
+    public override var intrinsicContentSize: CGSize {
+        return CGSize(width: UIView.noIntrinsicMetric, height: accessoryViewHeight)
+    }
+    
     // MARK: - APIs
     
     /// Set `isEnabled` value on the key of a given index.
@@ -184,10 +189,6 @@ public class KeyboardAccessoryView: UIInputView {
             return
         }
         keyButtonViews[index].tintColor = tintColor
-    }
-    
-    public override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: accessoryViewHeight)
     }
     
 }

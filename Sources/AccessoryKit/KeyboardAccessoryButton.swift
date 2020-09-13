@@ -2,13 +2,13 @@
 //  KeyboardAccessoryButton.swift
 //  AccessoryKit
 //
-//  Created by Yubo Qin on 2/11/20.
+//  Created by Yubo Qin on 9/13/20.
 //
 
 import UIKit
 
-/// View model class that represents a key button inside `KeyboardAccessoryView`.
-public class KeyboardAccessoryButton {
+/// View model struct that represents a key button inside `KeyboardAccessoryView`.
+public struct KeyboardAccessoryButton {
     
     /// Pre-defined types of key button.
     public enum ButtonType {
@@ -41,7 +41,10 @@ public class KeyboardAccessoryButton {
         .image: "photo",
     ]
     
+    /// The image that is shown on the button.
     public let image: UIImage
+    
+    /// The tap handler that will be invoked when tapping the button.
     public let tapHandler: () -> Void
     
     /// Initialize the view model of key button inside `KeyboardAccessoryView`.
@@ -62,47 +65,10 @@ public class KeyboardAccessoryButton {
     /// - Parameters:
     ///   - type: Pre-defined button type.
     ///   - tapHandler: The tap handler that will be invoked when tapping the button.
-    public convenience init(type: ButtonType,
-                            tapHandler: @escaping () -> Void) {
+    public init(type: ButtonType,
+                tapHandler: @escaping () -> Void) {
         let image = UIImage(systemName: Self.imageNameMap[type]!)!
         self.init(image: image, tapHandler: tapHandler)
-    }
-    
-}
-
-/// Real `UIButton` class is constructed from the view model `KeyboardAccessoryButton`.
-class KeyboardAccessoryButtonView: UIButton {
-    
-    private let viewModel: KeyboardAccessoryButton
-    private let viewSize: CGSize
-    
-    init(viewModel: KeyboardAccessoryButton,
-         width: CGFloat,
-         height: CGFloat,
-         cornerRadius: CGFloat) {
-        self.viewModel = viewModel
-        viewSize = CGSize(width: width, height: height)
-        super.init(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        
-        setImage(viewModel.image, for: .normal)
-        backgroundColor = .tertiarySystemGroupedBackground
-        
-        clipsToBounds = true
-        layer.cornerRadius = cornerRadius
-        translatesAutoresizingMaskIntoConstraints = false
-        addTarget(self, action: #selector(tapHandlerAction), for: .touchUpInside)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc func tapHandlerAction() {
-        viewModel.tapHandler()
-    }
-    
-    override var intrinsicContentSize: CGSize {
-        return viewSize
     }
     
 }

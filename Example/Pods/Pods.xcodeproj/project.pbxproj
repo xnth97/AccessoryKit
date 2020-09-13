@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3960E9A9FCEBE0BFB2F3CD19522631C5 /* KeyboardAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A541E8E97C16064E80892C47E1CFD7 /* KeyboardAccessoryView.swift */; };
+		43463EF2B29C8DF57A7C730FCE62DFCB /* AccessoryKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97DE819D29EB3B2D6657B91535B4C065 /* AccessoryKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		550B8D5E6F9A4D1EB186832F89369C8A /* AccessoryKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA91A6A2B7E97048F6B3A41706482A0 /* AccessoryKit-dummy.m */; };
 		582AD00A9B6F935F2E34ADCB4FACDDA4 /* Pods-AccessoryKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D831BDB2C7700CA23F5EA0D2260375 /* Pods-AccessoryKit_Tests-dummy.m */; };
-		5A60692B4801EB9829CADE4D582F2B6A /* AccessoryKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4984A9D4A7C0F90421DA0B2E8F95B2F0 /* AccessoryKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C64C3290AACF0B08E593E3D564A3B84 /* Pods-AccessoryKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFE1F59045BCAE59A5B363FAA1D38E2 /* Pods-AccessoryKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D4E6FE70AC8D47F8572AEE0A9D34569 /* Pods-AccessoryKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B7CE798F91A678A2A35CBB0F83D83F9 /* Pods-AccessoryKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83F1FF7CD2D9DE0D9A5893E396453ECF /* Pods-AccessoryKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4468F258C7B3E09237D7F013A78F1305 /* Pods-AccessoryKit_Example-dummy.m */; };
-		9C3AA3451F03C0915373DB96F5B9D0F0 /* KeyboardAccessoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2215091E6FED97958104FC91279E2A /* KeyboardAccessoryButton.swift */; };
-		B104B17FD74D940DC45CE00D40C0E02A /* AccessoryKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3CB7F8C2CF2397D4BB0EBC27D5EB9A /* AccessoryKit-dummy.m */; };
+		84F9432D7D007A491CF68D533311E790 /* KeyboardAccessoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BEE9F631693D5F34978AA165C5CAE1 /* KeyboardAccessoryButton.swift */; };
+		8F79BE0C08F31033FFA9A00D699FA8E3 /* KeyboardAccessoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FDDED5B696039BA5B70C7B0F0B9EC0 /* KeyboardAccessoryButtonView.swift */; };
 		BE18056BBA1F021690940BCFC0BA1238 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		C8D97E1B92C301502F42CCAAEDB7BEA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		C93F20F157ED4E2A434B04E874DA49C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
-		F80179E7506E22712704D6EED204D4A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		CAFA411A2B52BFD791011787FBE4FA17 /* KeyboardAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D32E370F7C66976C90675691A37A9C /* KeyboardAccessoryView.swift */; };
+		D3BE44BA14A16A5BC86672D57DF5E894 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		E46EA563CAD0C6F40381C3182CB1988F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,53 +40,45 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0424938BBC338D2C46D6B8D5CCA40DDC /* AccessoryKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AccessoryKit-prefix.pch"; sourceTree = "<group>"; };
+		0F7F052C222606401A6BAF9B467B44C8 /* AccessoryKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AccessoryKit.release.xcconfig; sourceTree = "<group>"; };
 		1045A4116C890857285AFAE309AF7972 /* Pods-AccessoryKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AccessoryKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		17B7DA167B9F6EF4A087B2C9A3356825 /* Pods-AccessoryKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AccessoryKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		19708C8C0431473B36893F947DDCDFE9 /* Pods-AccessoryKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AccessoryKit_Example.modulemap"; sourceTree = "<group>"; };
-		1B3CB7F8C2CF2397D4BB0EBC27D5EB9A /* AccessoryKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AccessoryKit-dummy.m"; sourceTree = "<group>"; };
 		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		43D44FAADA390F5EEC33D43568C3FB44 /* AccessoryKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AccessoryKit.release.xcconfig; sourceTree = "<group>"; };
 		4468F258C7B3E09237D7F013A78F1305 /* Pods-AccessoryKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AccessoryKit_Example-dummy.m"; sourceTree = "<group>"; };
-		479ED67A771F0E76D6E8902558EEC3C4 /* AccessoryKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AccessoryKit-Info.plist"; sourceTree = "<group>"; };
-		4984A9D4A7C0F90421DA0B2E8F95B2F0 /* AccessoryKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AccessoryKit-umbrella.h"; sourceTree = "<group>"; };
+		46066ACBDDC54227F94D40CB55301B57 /* AccessoryKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AccessoryKit-Info.plist"; sourceTree = "<group>"; };
 		602DF41261B2418A936B86806A46B605 /* Pods-AccessoryKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AccessoryKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		622951668B2FBDC3085FC74FBA240E2E /* AccessoryKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AccessoryKit.debug.xcconfig; sourceTree = "<group>"; };
 		660AA1BF4671632622317DDDC821DF8D /* Pods-AccessoryKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AccessoryKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		686672DE7D2179254C98549D46F198BD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		68819BDBB971C5CE8347566477707040 /* Pods-AccessoryKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AccessoryKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		68A541E8E97C16064E80892C47E1CFD7 /* KeyboardAccessoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryView.swift; path = Sources/AccessoryKit/KeyboardAccessoryView.swift; sourceTree = "<group>"; };
-		6D5C77F2751D4312B07E4CB4A72E02E8 /* AccessoryKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AccessoryKit.modulemap; sourceTree = "<group>"; };
-		77509E9C788D519592A107DBEC918C16 /* AccessoryKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AccessoryKit.debug.xcconfig; sourceTree = "<group>"; };
+		6E2BDCB57C570742717E30CBCC6453B5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		7D028EA6FF572A474C5572A1E3D2D880 /* Pods-AccessoryKit_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AccessoryKit_Example-Info.plist"; sourceTree = "<group>"; };
 		7F6B3AF8E2F11424EE48119AD9A922A3 /* AccessoryKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AccessoryKit.framework; path = AccessoryKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7CE798F91A678A2A35CBB0F83D83F9 /* Pods-AccessoryKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AccessoryKit_Example-umbrella.h"; sourceTree = "<group>"; };
-		8C794685003B7F24A272507A61E451A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		97DE819D29EB3B2D6657B91535B4C065 /* AccessoryKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AccessoryKit-umbrella.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A3FDDED5B696039BA5B70C7B0F0B9EC0 /* KeyboardAccessoryButtonView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryButtonView.swift; path = Sources/AccessoryKit/KeyboardAccessoryButtonView.swift; sourceTree = "<group>"; };
+		A5D32E370F7C66976C90675691A37A9C /* KeyboardAccessoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryView.swift; path = Sources/AccessoryKit/KeyboardAccessoryView.swift; sourceTree = "<group>"; };
 		A79130208F86E978498FE2A05FDF01D8 /* Pods-AccessoryKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AccessoryKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		AAD8542148C7F2CA11BFCD8C83F256B6 /* AccessoryKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AccessoryKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A8BEE9F631693D5F34978AA165C5CAE1 /* KeyboardAccessoryButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryButton.swift; path = Sources/AccessoryKit/KeyboardAccessoryButton.swift; sourceTree = "<group>"; };
 		B4FD20BBA570F47EE2E176FEB80EAB5C /* Pods-AccessoryKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AccessoryKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B7D831BDB2C7700CA23F5EA0D2260375 /* Pods-AccessoryKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AccessoryKit_Tests-dummy.m"; sourceTree = "<group>"; };
 		BE1C5DEB15C6274ACE99C0DBC17F756F /* Pods-AccessoryKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AccessoryKit_Example-frameworks.sh"; sourceTree = "<group>"; };
+		C8E400530D6DE9834D5B6C31B89E21F2 /* AccessoryKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AccessoryKit.modulemap; sourceTree = "<group>"; };
 		CAFE1F59045BCAE59A5B363FAA1D38E2 /* Pods-AccessoryKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AccessoryKit_Tests-umbrella.h"; sourceTree = "<group>"; };
 		CC419F4F4CE9852480C54BFD77889C9D /* Pods-AccessoryKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AccessoryKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D0BE8A169855CA7954F7E8D27AD1EC1C /* Pods-AccessoryKit_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AccessoryKit_Tests-Info.plist"; sourceTree = "<group>"; };
-		DD2215091E6FED97958104FC91279E2A /* KeyboardAccessoryButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryButton.swift; path = Sources/AccessoryKit/KeyboardAccessoryButton.swift; sourceTree = "<group>"; };
 		E6254BA1FE4691F89D24EF38016B0CB4 /* Pods-AccessoryKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AccessoryKit_Tests.modulemap"; sourceTree = "<group>"; };
+		E8032F0EDAD4EA8B334F6ADDAFE7ECDF /* AccessoryKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AccessoryKit-prefix.pch"; sourceTree = "<group>"; };
+		EAA91A6A2B7E97048F6B3A41706482A0 /* AccessoryKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AccessoryKit-dummy.m"; sourceTree = "<group>"; };
 		EB8E72FDE1444CDEFB8DEC9EFD439980 /* Pods_AccessoryKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AccessoryKit_Tests.framework; path = "Pods-AccessoryKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D42910332CF34980F117284C91E1BC /* Pods_AccessoryKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AccessoryKit_Example.framework; path = "Pods-AccessoryKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB578383BB46AAC42D103F52F820EF7A /* AccessoryKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AccessoryKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FE693F7626D428E8DADB2452AC613836 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		19E4ECCF2E04C67605FEF825CB317894 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F80179E7506E22712704D6EED204D4A3 /* Foundation.framework in Frameworks */,
-				C93F20F157ED4E2A434B04E874DA49C1 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3DA400545778F25418B4539FEE00CD6B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,6 +92,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE18056BBA1F021690940BCFC0BA1238 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B9CA96DC8760F1D9C23A2D4E50758B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3BE44BA14A16A5BC86672D57DF5E894 /* Foundation.framework in Frameworks */,
+				E46EA563CAD0C6F40381C3182CB1988F /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,14 +124,27 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7BD3B44098B099E4E1FAA881002E00BC /* Pod */ = {
+		4D37DB4BFD8FE6A3C0172E4ECF970607 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AAD8542148C7F2CA11BFCD8C83F256B6 /* AccessoryKit.podspec */,
-				686672DE7D2179254C98549D46F198BD /* LICENSE */,
-				8C794685003B7F24A272507A61E451A0 /* README.md */,
+				C8E400530D6DE9834D5B6C31B89E21F2 /* AccessoryKit.modulemap */,
+				EAA91A6A2B7E97048F6B3A41706482A0 /* AccessoryKit-dummy.m */,
+				46066ACBDDC54227F94D40CB55301B57 /* AccessoryKit-Info.plist */,
+				E8032F0EDAD4EA8B334F6ADDAFE7ECDF /* AccessoryKit-prefix.pch */,
+				97DE819D29EB3B2D6657B91535B4C065 /* AccessoryKit-umbrella.h */,
+				622951668B2FBDC3085FC74FBA240E2E /* AccessoryKit.debug.xcconfig */,
+				0F7F052C222606401A6BAF9B467B44C8 /* AccessoryKit.release.xcconfig */,
 			);
-			name = Pod;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/AccessoryKit";
+			sourceTree = "<group>";
+		};
+		79BD71FDCF16163CD87EE646BCB298C8 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3AA377F274A096C762321C3778897FE /* AccessoryKit */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		957664CC701660F6F0876DA2F0AAF09B /* Pods-AccessoryKit_Tests */ = {
@@ -148,6 +163,16 @@
 			path = "Target Support Files/Pods-AccessoryKit_Tests";
 			sourceTree = "<group>";
 		};
+		AB10E15C548931F19A7834D4D6C493ED /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				FB578383BB46AAC42D103F52F820EF7A /* AccessoryKit.podspec */,
+				6E2BDCB57C570742717E30CBCC6453B5 /* LICENSE */,
+				FE693F7626D428E8DADB2452AC613836 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		BF06E083189D39221418BA12F7658141 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,18 +181,6 @@
 				EB8E72FDE1444CDEFB8DEC9EFD439980 /* Pods_AccessoryKit_Tests.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CA8E740C271FC3103593D607239C09AD /* AccessoryKit */ = {
-			isa = PBXGroup;
-			children = (
-				DD2215091E6FED97958104FC91279E2A /* KeyboardAccessoryButton.swift */,
-				68A541E8E97C16064E80892C47E1CFD7 /* KeyboardAccessoryView.swift */,
-				7BD3B44098B099E4E1FAA881002E00BC /* Pod */,
-				FF11D71C4A725E9F6505E9DFC09CB72A /* Support Files */,
-			);
-			name = AccessoryKit;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		CB5C444AA3CDEB5A2FE3978EC7741967 /* Pods-AccessoryKit_Example */ = {
@@ -191,19 +204,24 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D373C980BD5ACC7703D0BF7717EEC4A5 /* Development Pods */,
+				79BD71FDCF16163CD87EE646BCB298C8 /* Development Pods */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
 				BF06E083189D39221418BA12F7658141 /* Products */,
 				2374B9A0B14810158BFD50ADA5128238 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D373C980BD5ACC7703D0BF7717EEC4A5 /* Development Pods */ = {
+		D3AA377F274A096C762321C3778897FE /* AccessoryKit */ = {
 			isa = PBXGroup;
 			children = (
-				CA8E740C271FC3103593D607239C09AD /* AccessoryKit */,
+				A8BEE9F631693D5F34978AA165C5CAE1 /* KeyboardAccessoryButton.swift */,
+				A3FDDED5B696039BA5B70C7B0F0B9EC0 /* KeyboardAccessoryButtonView.swift */,
+				A5D32E370F7C66976C90675691A37A9C /* KeyboardAccessoryView.swift */,
+				AB10E15C548931F19A7834D4D6C493ED /* Pod */,
+				4D37DB4BFD8FE6A3C0172E4ECF970607 /* Support Files */,
 			);
-			name = "Development Pods";
+			name = AccessoryKit;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
@@ -213,21 +231,6 @@
 				312B988EF117AE4DE76A268D970131FE /* UIKit.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		FF11D71C4A725E9F6505E9DFC09CB72A /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6D5C77F2751D4312B07E4CB4A72E02E8 /* AccessoryKit.modulemap */,
-				1B3CB7F8C2CF2397D4BB0EBC27D5EB9A /* AccessoryKit-dummy.m */,
-				479ED67A771F0E76D6E8902558EEC3C4 /* AccessoryKit-Info.plist */,
-				0424938BBC338D2C46D6B8D5CCA40DDC /* AccessoryKit-prefix.pch */,
-				4984A9D4A7C0F90421DA0B2E8F95B2F0 /* AccessoryKit-umbrella.h */,
-				77509E9C788D519592A107DBEC918C16 /* AccessoryKit.debug.xcconfig */,
-				43D44FAADA390F5EEC33D43568C3FB44 /* AccessoryKit.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/AccessoryKit";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,19 +244,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		15098E43AE1C3A9DA91696D4930D32B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43463EF2B29C8DF57A7C730FCE62DFCB /* AccessoryKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4FFB60908356510E74F3E8312DC1E30 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6C64C3290AACF0B08E593E3D564A3B84 /* Pods-AccessoryKit_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC6FFDA81F67ACB21A22872C0C11C2ED /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A60692B4801EB9829CADE4D582F2B6A /* AccessoryKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,12 +284,12 @@
 		};
 		6425C82BABEC4581D5A9A5C1B054D60B /* AccessoryKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1F50709CEA2625CBA4E962E480F4ABF7 /* Build configuration list for PBXNativeTarget "AccessoryKit" */;
+			buildConfigurationList = 20EAC055922FE1BA5B6EE9461D1D0A7F /* Build configuration list for PBXNativeTarget "AccessoryKit" */;
 			buildPhases = (
-				DC6FFDA81F67ACB21A22872C0C11C2ED /* Headers */,
-				B6B847C6C3D7B966051C45BCF7D872E0 /* Sources */,
-				19E4ECCF2E04C67605FEF825CB317894 /* Frameworks */,
-				E32E0546CC99E28C5FB8CE195FE85B00 /* Resources */,
+				15098E43AE1C3A9DA91696D4930D32B1 /* Headers */,
+				61B475329EE5E881EED37992E5F4AE40 /* Sources */,
+				F3B9CA96DC8760F1D9C23A2D4E50758B /* Frameworks */,
+				5754F5A5AF437290E44B11A8E15BB414 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -346,6 +349,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5754F5A5AF437290E44B11A8E15BB414 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5D0217C3304A92AE165F68897B183E1B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,31 +370,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E32E0546CC99E28C5FB8CE195FE85B00 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		61B475329EE5E881EED37992E5F4AE40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550B8D5E6F9A4D1EB186832F89369C8A /* AccessoryKit-dummy.m in Sources */,
+				84F9432D7D007A491CF68D533311E790 /* KeyboardAccessoryButton.swift in Sources */,
+				8F79BE0C08F31033FFA9A00D699FA8E3 /* KeyboardAccessoryButtonView.swift in Sources */,
+				CAFA411A2B52BFD791011787FBE4FA17 /* KeyboardAccessoryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E55E844324A2D2F51D2BF22F2885743 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				83F1FF7CD2D9DE0D9A5893E396453ECF /* Pods-AccessoryKit_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B6B847C6C3D7B966051C45BCF7D872E0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B104B17FD74D940DC45CE00D40C0E02A /* AccessoryKit-dummy.m in Sources */,
-				9C3AA3451F03C0915373DB96F5B9D0F0 /* KeyboardAccessoryButton.swift in Sources */,
-				3960E9A9FCEBE0BFB2F3CD19522631C5 /* KeyboardAccessoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +418,40 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0BFD3FA2850BBCABEBB1CD287FC96544 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F7F052C222606401A6BAF9B467B44C8 /* AccessoryKit.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AccessoryKit/AccessoryKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AccessoryKit/AccessoryKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AccessoryKit/AccessoryKit.modulemap";
+				PRODUCT_MODULE_NAME = AccessoryKit;
+				PRODUCT_NAME = AccessoryKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -473,73 +511,6 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
-		};
-		1E7CD35D4BB2D9B8C431DABE2446D5F9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43D44FAADA390F5EEC33D43568C3FB44 /* AccessoryKit.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AccessoryKit/AccessoryKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AccessoryKit/AccessoryKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AccessoryKit/AccessoryKit.modulemap";
-				PRODUCT_MODULE_NAME = AccessoryKit;
-				PRODUCT_NAME = AccessoryKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		690111AFD6B9BB604D9BECA60F665133 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77509E9C788D519592A107DBEC918C16 /* AccessoryKit.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AccessoryKit/AccessoryKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AccessoryKit/AccessoryKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AccessoryKit/AccessoryKit.modulemap";
-				PRODUCT_MODULE_NAME = AccessoryKit;
-				PRODUCT_NAME = AccessoryKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		88D4922DDEAAB02AD29F2E916C10C038 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -683,6 +654,39 @@
 			};
 			name = Debug;
 		};
+		D18DE52B064980A2B8214B15DEB987F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 622951668B2FBDC3085FC74FBA240E2E /* AccessoryKit.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AccessoryKit/AccessoryKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AccessoryKit/AccessoryKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AccessoryKit/AccessoryKit.modulemap";
+				PRODUCT_MODULE_NAME = AccessoryKit;
+				PRODUCT_NAME = AccessoryKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		ED7888FA6713EABBF66D26A8003AD1CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -750,11 +754,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1F50709CEA2625CBA4E962E480F4ABF7 /* Build configuration list for PBXNativeTarget "AccessoryKit" */ = {
+		20EAC055922FE1BA5B6EE9461D1D0A7F /* Build configuration list for PBXNativeTarget "AccessoryKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				690111AFD6B9BB604D9BECA60F665133 /* Debug */,
-				1E7CD35D4BB2D9B8C431DABE2446D5F9 /* Release */,
+				D18DE52B064980A2B8214B15DEB987F4 /* Debug */,
+				0BFD3FA2850BBCABEBB1CD287FC96544 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
