@@ -46,7 +46,7 @@ let keyButtons: [KeyboardAccessoryButton] = [
     KeyboardAccessoryButton(type: .undo, tapHandler: { [weak self] in
         self?.undo()
     }),
-    KeyboardAccessoryButton(image: UIImage(named: "img", tapHandler: {}),
+    KeyboardAccessoryButton(image: UIImage(named: "img"), tapHandler: {}),
 ]
 
 // Initialize `KeyboardAccessoryView`
