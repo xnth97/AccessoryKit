@@ -67,18 +67,20 @@ public class KeyboardAccessoryView: UIInputView {
         self.keyCornerRadius = keyCornerRadius
         self.keyMargin = keyMargin
         self.keyButtonViews = keyButtons.map { buttonModel in
-            return KeyboardAccessoryButtonView(viewModel: buttonModel,
-                                               width: keyWidth,
-                                               height: keyHeight,
-                                               cornerRadius: keyCornerRadius)
+            return KeyboardAccessoryButtonView(
+                viewModel: buttonModel,
+                width: keyWidth,
+                height: keyHeight,
+                cornerRadius: keyCornerRadius)
         }
         self.showDismissKeyboardKey = showDismissKeyboardKey
         self.delegate = delegate
         
-        let newFrame = CGRect(x: frame.origin.x,
-                              y: frame.origin.y,
-                              width: frame.size.width,
-                              height: 2 * keyMargin + keyHeight)
+        let newFrame = CGRect(
+            x: frame.origin.x,
+            y: frame.origin.y,
+            width: frame.size.width,
+            height: 2 * keyMargin + keyHeight)
         super.init(frame: newFrame, inputViewStyle: inputViewStyle)
         setupViews()
         
@@ -116,10 +118,11 @@ public class KeyboardAccessoryView: UIInputView {
             let dismissKey = KeyboardAccessoryButton(image: image) { [weak self] in
                 self?.dismissKeyboardKeyTapped()
             }
-            let dismissKeyView = KeyboardAccessoryButtonView(viewModel: dismissKey,
-                                                             width: keyWidth,
-                                                             height: keyHeight,
-                                                             cornerRadius: keyCornerRadius)
+            let dismissKeyView = KeyboardAccessoryButtonView(
+                viewModel: dismissKey,
+                width: keyWidth,
+                height: keyHeight,
+                cornerRadius: keyCornerRadius)
             container.addSubview(dismissKeyView)
             constraints.append(contentsOf: [
                 dismissKeyView.widthAnchor.constraint(equalToConstant: keyWidth),
@@ -142,8 +145,8 @@ public class KeyboardAccessoryView: UIInputView {
             keysStackView.heightAnchor.constraint(equalToConstant: keyHeight),
         ])
         
-        for buttonViewItem in keyButtonViews {
-            addAccessoryKey(keyView: buttonViewItem)
+        keyButtonViews.forEach {
+            addAccessoryKey(keyView: $0)
         }
         
         NSLayoutConstraint.activate(constraints)

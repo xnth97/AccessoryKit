@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             KeyboardAccessoryButton(type: .delete, tapHandler: {}),
             KeyboardAccessoryButton(type: .item, tapHandler: {}),
             KeyboardAccessoryButton(type: .quote, tapHandler: {}),
-            KeyboardAccessoryButton(type: .link, tapHandler: {}),
+            KeyboardAccessoryButton(type: .link, menu: createInsertMenu()),
             KeyboardAccessoryButton(type: .image, tapHandler: {}),
         ]
         accessoryView = KeyboardAccessoryView(
@@ -71,6 +71,28 @@ class ViewController: UIViewController {
     private func updateAccessoryViewButtonEnabled() {
         accessoryView.setEnabled(textView.undoManager?.canUndo ?? false, at: 1)
         accessoryView.setEnabled(textView.undoManager?.canRedo ?? false, at: 2)
+    }
+
+    private func createInsertMenu() -> UIMenu {
+        return UIMenu(
+            title: "",
+            image: nil,
+            identifier: nil,
+            options: .displayInline,
+            children: [
+                UIAction(
+                    title: "Insert link",
+                    image: UIImage(systemName: "link"),
+                    handler: { _ in }),
+                UIAction(
+                    title: "Insert image",
+                    image: UIImage(systemName: "photo"),
+                    handler: { _ in }),
+                UIAction(
+                    title: "Insert math formula",
+                    image: UIImage(systemName: "function"),
+                    handler: { _ in }),
+            ])
     }
 
 }

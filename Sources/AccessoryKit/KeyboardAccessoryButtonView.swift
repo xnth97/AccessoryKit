@@ -27,7 +27,18 @@ class KeyboardAccessoryButtonView: UIButton {
         clipsToBounds = true
         layer.cornerRadius = cornerRadius
         translatesAutoresizingMaskIntoConstraints = false
-        addTarget(self, action: #selector(tapHandlerAction), for: .touchUpInside)
+
+        if #available(iOS 14.0, *) {
+            if let menu = viewModel.menu {
+                self.menu = menu
+                showsMenuAsPrimaryAction = true
+                return
+            }
+        }
+
+        if viewModel.tapHandler != nil {
+            addTarget(self, action: #selector(tapHandlerAction), for: .touchUpInside)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -35,7 +46,7 @@ class KeyboardAccessoryButtonView: UIButton {
     }
     
     @objc func tapHandlerAction() {
-        viewModel.tapHandler()
+        viewModel.tapHandler?()
     }
     
     override var intrinsicContentSize: CGSize {

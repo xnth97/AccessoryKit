@@ -18,6 +18,7 @@ The main features are:
 * Supports Auto Layout and Safe Area.
 * Supports dark mode.
 * Provides built-in pre-defined buttons with SF Symbol.
+* Supports presenting `UIMenu` on input accessory view.
 
 ## Usage
 
@@ -43,10 +44,14 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ```swift
 // Create view model array of key buttons
 let keyButtons: [KeyboardAccessoryButton] = [
+    // Create button with built-in type and tap handler block
     KeyboardAccessoryButton(type: .undo, tapHandler: { [weak self] in
         self?.undo()
     }),
+    // Create button with UIImage
     KeyboardAccessoryButton(image: UIImage(named: "img"), tapHandler: {}),
+    // Create button with UIMenu
+    KeyboardAccessoryButton(type: .link, menu: createInsertMenu()),
 ]
 
 // Initialize `KeyboardAccessoryView`
@@ -70,10 +75,12 @@ accessoryView.setEnabled(false, at: 1)
 
 ## TODO
 
-- [ ] Expose more APIs customization
+- [ ] Expose more APIs for customization
 - [x] Tint color
 - [ ] Tweak UI
 - [x] Use SF Symbol
+- [x] UIMenu support
+- [ ] UIAction support
 - [x] SPM support
 
 ## License

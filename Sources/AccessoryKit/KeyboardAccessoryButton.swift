@@ -45,30 +45,37 @@ public struct KeyboardAccessoryButton {
     public let image: UIImage
     
     /// The tap handler that will be invoked when tapping the button.
-    public let tapHandler: () -> Void
+    public let tapHandler: (() -> Void)?
+
+    /// The menu that will be shown once button is tapped.
+    public let menu: UIMenu?
     
     /// Initialize the view model of key button inside `KeyboardAccessoryView`.
     /// - Parameters:
     ///   - image: The image that is shown on the button.
     ///   - tapHandler: The tap handler that will be invoked when tapping the button.
+    ///   - menu: The menu that will be shown once button is tapped. Only available for iOS 14+.
     public init(image: UIImage,
-                tapHandler: @escaping () -> Void) {
+                tapHandler: (() -> Void)? = nil,
+                menu: UIMenu? = nil) {
         self.image = image
         self.tapHandler = tapHandler
+        self.menu = menu
     }
     
     /// Initialize the view model of key button with a given button type.
-    ///
-    /// For pre-defined button types, on iOS 13+ the button will try to use SF Symbol
-    /// for proper image, otherwise will use the bundled image from Google Material Icons.
-    ///
     /// - Parameters:
     ///   - type: Pre-defined button type.
     ///   - tapHandler: The tap handler that will be invoked when tapping the button.
+    ///   - menu: The menu that will be shown once button is tapped. Only available for iOS 14+.
     public init(type: ButtonType,
-                tapHandler: @escaping () -> Void) {
-        let image = UIImage(systemName: Self.imageNameMap[type]!)!
-        self.init(image: image, tapHandler: tapHandler)
+                tapHandler: (() -> Void)? = nil,
+                menu: UIMenu? = nil) {
+        guard let imageName = Self.imageNameMap[type],
+              let image = UIImage(systemName: imageName) else {
+            fatalError("Error: Do not have corresponding image for button type \(type)")
+        }
+        self.init(image: image, tapHandler: tapHandler, menu: menu)
     }
     
 }
