@@ -7,9 +7,10 @@
 
 import UIKit
 
-/// Real `UIButton` class is constructed from the view model `KeyboardAccessoryButton`.
-class KeyboardAccessoryButtonView: UIButton {
-    
+/// Internal subview class that is represented by view model `KeyboardAccessoryButton`.
+class KeyboardAccessoryButtonView: UIView {
+
+    private let button = UIButton(type: .custom)
     private let viewModel: KeyboardAccessoryButton
     private let viewSize: CGSize
     
@@ -20,24 +21,35 @@ class KeyboardAccessoryButtonView: UIButton {
         self.viewModel = viewModel
         viewSize = CGSize(width: width, height: height)
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: height))
+
+        addSubview(button)
         
-        setImage(viewModel.image, for: .normal)
-        backgroundColor = .tertiarySystemGroupedBackground
+        button.setImage(viewModel.image, for: .normal)
+        button.setTitle(viewModel.title, for: .normal)
+        button.backgroundColor = .tertiarySystemGroupedBackground
         
-        clipsToBounds = true
-        layer.cornerRadius = cornerRadius
+        button.clipsToBounds = true
+        button.layer.cornerRadius = cornerRadius
+        button.translatesAutoresizingMaskIntoConstraints = false
         translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            button.topAnchor.constraint(equalTo: topAnchor),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor),
+            button.leadingAnchor.constraint(equalTo: leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: trailingAnchor),
+        ])
 
         if #available(iOS 14.0, *) {
             if let menu = viewModel.menu {
-                self.menu = menu
-                showsMenuAsPrimaryAction = true
+                button.menu = menu
+                button.showsMenuAsPrimaryAction = true
                 return
             }
         }
 
         if viewModel.tapHandler != nil {
-            addTarget(self, action: #selector(tapHandlerAction), for: .touchUpInside)
+            button.addTarget(self, action: #selector(tapHandlerAction), for: .touchUpInside)
         }
     }
     
@@ -45,12 +57,30 @@ class KeyboardAccessoryButtonView: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func tapHandlerAction() {
+    @objc private func tapHandlerAction() {
         viewModel.tapHandler?()
     }
+
+    // MARK: - APIs
     
     override var intrinsicContentSize: CGSize {
         return viewSize
+    }
+
+    override var tintColor: UIColor! {
+        didSet {
+            button.tintColor = tintColor
+            button.setTitleColor(tintColor, for: .normal)
+        }
+    }
+
+    var isEnabled: Bool {
+        set {
+            button.isEnabled = newValue
+        }
+        get {
+            button.isEnabled
+        }
     }
     
 }

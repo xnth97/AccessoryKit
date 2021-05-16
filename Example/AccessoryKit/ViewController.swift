@@ -34,6 +34,7 @@ class ViewController: UIViewController {
             KeyboardAccessoryButton(type: .quote, tapHandler: {}),
             KeyboardAccessoryButton(type: .link, menu: createInsertMenu()),
             KeyboardAccessoryButton(type: .image, tapHandler: {}),
+            KeyboardAccessoryButton(title: "Esc"),
         ]
         accessoryView = KeyboardAccessoryView(
             frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 0),

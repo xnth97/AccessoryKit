@@ -50,6 +50,8 @@ let keyButtons: [KeyboardAccessoryButton] = [
     }),
     // Create button with UIImage
     KeyboardAccessoryButton(image: UIImage(named: "img"), tapHandler: {}),
+    // Create button with title
+    KeyboardAccessoryButton(title: "Button", tapHandler: {}),
     // Create button with UIMenu
     KeyboardAccessoryButton(type: .link, menu: createInsertMenu()),
 ]
@@ -75,6 +77,7 @@ accessoryView.setEnabled(false, at: 1)
 
 ## TODO
 
+- [x] Support text title
 - [ ] Expose more APIs for customization
 - [x] Tint color
 - [ ] Tweak UI

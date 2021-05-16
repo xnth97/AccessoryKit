@@ -42,7 +42,10 @@ public struct KeyboardAccessoryButton {
     ]
     
     /// The image that is shown on the button.
-    public let image: UIImage
+    public let image: UIImage?
+
+    /// The title that is shown on the button.
+    public let title: String?
     
     /// The tap handler that will be invoked when tapping the button.
     public let tapHandler: (() -> Void)?
@@ -52,12 +55,18 @@ public struct KeyboardAccessoryButton {
     
     /// Initialize the view model of key button inside `KeyboardAccessoryView`.
     /// - Parameters:
+    ///   - title: The title that is shown on the button.
     ///   - image: The image that is shown on the button.
     ///   - tapHandler: The tap handler that will be invoked when tapping the button.
     ///   - menu: The menu that will be shown once button is tapped. Only available for iOS 14+.
-    public init(image: UIImage,
+    public init(title: String? = nil,
+                image: UIImage? = nil,
                 tapHandler: (() -> Void)? = nil,
                 menu: UIMenu? = nil) {
+        if title == nil && image == nil {
+            fatalError("[AccessoryKit] Error: Must provide a title or an image for button.")
+        }
+        self.title = title
         self.image = image
         self.tapHandler = tapHandler
         self.menu = menu
@@ -73,7 +82,7 @@ public struct KeyboardAccessoryButton {
                 menu: UIMenu? = nil) {
         guard let imageName = Self.imageNameMap[type],
               let image = UIImage(systemName: imageName) else {
-            fatalError("Error: Do not have corresponding image for button type \(type)")
+            fatalError("[AccessoryKit] Error: Do not have corresponding image for button type \(type)")
         }
         self.init(image: image, tapHandler: tapHandler, menu: menu)
     }

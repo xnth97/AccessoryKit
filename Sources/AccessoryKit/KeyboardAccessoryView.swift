@@ -8,7 +8,7 @@
 import UIKit
 
 /// Delegate for `KeyboardAccessoryView`.
-@objc public protocol KeyboardAccessoryViewDelegate: class {
+@objc public protocol KeyboardAccessoryViewDelegate: AnyObject {
     
     /// This function is called when `KeyboardAccessoryView` has `showDismissKeyboardKey` and the dismiss keyboard
     /// key is tapped.
@@ -192,6 +192,19 @@ public class KeyboardAccessoryView: UIInputView {
             return
         }
         keyButtonViews[index].tintColor = tintColor
+    }
+
+    /// Set `tintColor` for the whole accessory view.
+    public override var tintColor: UIColor! {
+        set {
+            for button in keyButtonViews {
+                button.tintColor = newValue
+            }
+            super.tintColor = newValue
+        }
+        get {
+            super.tintColor
+        }
     }
     
 }
