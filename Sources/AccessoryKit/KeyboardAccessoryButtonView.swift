@@ -26,6 +26,7 @@ class KeyboardAccessoryButtonView: UIView {
         
         button.setImage(viewModel.image, for: .normal)
         button.setTitle(viewModel.title, for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
         button.backgroundColor = .tertiarySystemGroupedBackground
         
         button.clipsToBounds = true

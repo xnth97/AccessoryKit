@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AccessoryKit'
-  s.version          = '0.6'
+  s.version          = '0.6.1'
   s.summary          = 'A customizable, expandable, and easy-to-use input accessory view component for iOS.'
 
   s.description      = <<-DESC
