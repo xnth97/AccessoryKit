@@ -45,9 +45,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 // Create view model array of key buttons
 let keyButtons: [KeyboardAccessoryButton] = [
     // Create button with built-in type and tap handler block
-    KeyboardAccessoryButton(type: .undo, tapHandler: { [weak self] in
+    KeyboardAccessoryButton(type: .undo) { [weak self] in
         self?.undo()
-    }),
+    },
     // Create button with UIImage
     KeyboardAccessoryButton(image: UIImage(named: "img"), tapHandler: {}),
     // Create button with title

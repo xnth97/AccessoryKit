@@ -13,7 +13,7 @@ class KeyboardAccessoryButtonView: UIView {
     private let button = UIButton(type: .custom)
     private let viewModel: KeyboardAccessoryButton
     private let viewSize: CGSize
-    
+
     init(viewModel: KeyboardAccessoryButton,
          width: CGFloat,
          height: CGFloat,
@@ -23,12 +23,19 @@ class KeyboardAccessoryButtonView: UIView {
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: height))
 
         addSubview(button)
-        
+
         button.setImage(viewModel.image, for: .normal)
         button.setTitle(viewModel.title, for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
+
+        button.tintColor = viewModel.tintColor
+        button.setTitleColor(viewModel.tintColor, for: .normal)
+
+        if let font = viewModel.font {
+            button.titleLabel?.font = font
+        }
+
         button.backgroundColor = .tertiarySystemGroupedBackground
-        
+
         button.clipsToBounds = true
         button.layer.cornerRadius = cornerRadius
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -53,17 +60,17 @@ class KeyboardAccessoryButtonView: UIView {
             button.addTarget(self, action: #selector(tapHandlerAction), for: .touchUpInside)
         }
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     @objc private func tapHandlerAction() {
         viewModel.tapHandler?()
     }
 
     // MARK: - APIs
-    
+
     override var intrinsicContentSize: CGSize {
         return viewSize
     }
@@ -83,5 +90,5 @@ class KeyboardAccessoryButtonView: UIView {
             button.isEnabled
         }
     }
-    
+
 }

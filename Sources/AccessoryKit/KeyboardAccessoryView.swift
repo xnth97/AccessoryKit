@@ -9,39 +9,42 @@ import UIKit
 
 /// Delegate for `KeyboardAccessoryView`.
 @objc public protocol KeyboardAccessoryViewDelegate: AnyObject {
-    
+
     /// This function is called when `KeyboardAccessoryView` has `showDismissKeyboardKey` and the dismiss keyboard
     /// key is tapped.
     @objc optional func dismissKeyboardButtonTapped()
+
 }
 
 /// The `UIView` class that works as the `inputAccessoryView`, usually looks like a toolbar on top of the screen keyboard.
 public class KeyboardAccessoryView: UIInputView {
-    
-    /// Constants
+
+    // MARK: - Constants
+
     public static let defaultKeyWidth: CGFloat = 60.0
     public static let defaultKeyHeight: CGFloat = 40.0
     public static let defaultKeyCornerRadius: CGFloat = 8.0
     public static let defaultKeyMargin: CGFloat = 8.0
-    
-    /// Properties
+
+    // MARK: - Properties
+
     private let container = UIView()
     private let keysScrollView = UIScrollView()
     private let keysStackView = UIStackView()
-    
+
     private let keyMargin: CGFloat
     private let keyWidth: CGFloat
     private let keyHeight: CGFloat
     private let keyCornerRadius: CGFloat
     private let keyButtonViews: [KeyboardAccessoryButtonView]
     private let showDismissKeyboardKey: Bool
-    
+
     public var accessoryViewHeight: CGFloat {
         return 2 * keyMargin + keyHeight
     }
-    
+
     private weak var delegate: KeyboardAccessoryViewDelegate?
-    
+
     /// Initializer of `KeyboardAccessoryView`
     /// - Parameters:
     ///   - frame: The frame rectangle, which describes the view’s location and size in its superview’s coordinate system.
@@ -86,14 +89,14 @@ public class KeyboardAccessoryView: UIInputView {
         
         autoresizingMask = .flexibleHeight
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupViews() {
         var constraints: [NSLayoutConstraint] = []
-        
+
         addSubview(container)
         container.translatesAutoresizingMaskIntoConstraints = false
         constraints.append(contentsOf: [
@@ -103,7 +106,7 @@ public class KeyboardAccessoryView: UIInputView {
             container.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             container.heightAnchor.constraint(equalToConstant: accessoryViewHeight),
         ])
-        
+
         container.addSubview(keysScrollView)
         keysScrollView.translatesAutoresizingMaskIntoConstraints = false
         keysScrollView.alwaysBounceHorizontal = true
@@ -112,7 +115,7 @@ public class KeyboardAccessoryView: UIInputView {
             keysScrollView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
             keysScrollView.heightAnchor.constraint(equalToConstant: keyHeight),
         ])
-        
+
         let keyboardDismissImage = UIImage(systemName: "keyboard.chevron.compact.down")
         if let image = keyboardDismissImage, showDismissKeyboardKey {
             let dismissKey = KeyboardAccessoryButton(image: image) { [weak self] in
@@ -134,7 +137,7 @@ public class KeyboardAccessoryView: UIInputView {
         } else {
             constraints.append(keysScrollView.trailingAnchor.constraint(equalTo: container.trailingAnchor))
         }
-        
+
         keysScrollView.addSubview(keysStackView)
         keysStackView.translatesAutoresizingMaskIntoConstraints = false
         keysStackView.axis = .horizontal
@@ -144,34 +147,34 @@ public class KeyboardAccessoryView: UIInputView {
             keysStackView.centerYAnchor.constraint(equalTo: keysScrollView.centerYAnchor),
             keysStackView.heightAnchor.constraint(equalToConstant: keyHeight),
         ])
-        
+
         keyButtonViews.forEach {
             addAccessoryKey(keyView: $0)
         }
-        
+
         NSLayoutConstraint.activate(constraints)
-        
+
         keysStackView.layoutIfNeeded()
         let stackViewSize = keysStackView.frame.size
         keysScrollView.contentSize = CGSize(width: stackViewSize.width + keyMargin, height: stackViewSize.height)
         keysScrollView.showsHorizontalScrollIndicator = false
         keysScrollView.showsVerticalScrollIndicator = false
     }
-    
+
     private func addAccessoryKey(keyView: UIView) {
         keysStackView.addArrangedSubview(keyView)
     }
-    
+
     private func dismissKeyboardKeyTapped() {
         delegate?.dismissKeyboardButtonTapped?()
     }
-    
+
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: UIView.noIntrinsicMetric, height: accessoryViewHeight)
     }
-    
+
     // MARK: - APIs
-    
+
     /// Set `isEnabled` value on the key of a given index.
     /// - Parameters:
     ///   - enabled: Boolean value indicating whether the key is enabled.
@@ -182,7 +185,7 @@ public class KeyboardAccessoryView: UIInputView {
         }
         keyButtonViews[index].isEnabled = enabled
     }
-    
+
     /// Set `tintColor` value on the key of a given index.
     /// - Parameters:
     ///   - tintColor: Tint color to be set.
@@ -206,5 +209,5 @@ public class KeyboardAccessoryView: UIInputView {
             super.tintColor
         }
     }
-    
+
 }

@@ -18,22 +18,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let keyButtons: [KeyboardAccessoryButton] = [
-            KeyboardAccessoryButton(type: .tab, tapHandler: {}),
-            KeyboardAccessoryButton(type: .undo, tapHandler: { [weak self] in
+            KeyboardAccessoryButton(type: .tab),
+            KeyboardAccessoryButton(type: .undo) { [weak self] in
                 self?.undo()
-            }),
-            KeyboardAccessoryButton(type: .redo, tapHandler: { [weak self] in
+            },
+            KeyboardAccessoryButton(type: .redo) { [weak self] in
                 self?.redo()
-            }),
-            KeyboardAccessoryButton(type: .header, tapHandler: {}),
-            KeyboardAccessoryButton(type: .bold, tapHandler: {}),
-            KeyboardAccessoryButton(type: .italic, tapHandler: {}),
-            KeyboardAccessoryButton(type: .code, tapHandler: {}),
-            KeyboardAccessoryButton(type: .delete, tapHandler: {}),
-            KeyboardAccessoryButton(type: .item, tapHandler: {}),
-            KeyboardAccessoryButton(type: .quote, tapHandler: {}),
+            },
+            KeyboardAccessoryButton(type: .header),
+            KeyboardAccessoryButton(type: .bold),
+            KeyboardAccessoryButton(type: .italic),
+            KeyboardAccessoryButton(type: .code),
+            KeyboardAccessoryButton(type: .delete),
+            KeyboardAccessoryButton(type: .item),
+            KeyboardAccessoryButton(type: .quote),
             KeyboardAccessoryButton(type: .link, menu: createInsertMenu()),
-            KeyboardAccessoryButton(type: .image, tapHandler: {}),
+            KeyboardAccessoryButton(type: .image),
             KeyboardAccessoryButton(title: "Esc"),
         ]
         accessoryView = KeyboardAccessoryView(
