@@ -48,12 +48,10 @@ class KeyboardAccessoryButtonView: UIView {
             button.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
 
-        if #available(iOS 14.0, *) {
-            if let menu = viewModel.menu {
-                button.menu = menu
-                button.showsMenuAsPrimaryAction = true
-                return
-            }
+        if let menu = viewModel.menu {
+            button.menu = menu
+            button.showsMenuAsPrimaryAction = true
+            return
         }
 
         if viewModel.tapHandler != nil {
@@ -61,6 +59,7 @@ class KeyboardAccessoryButtonView: UIView {
         }
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

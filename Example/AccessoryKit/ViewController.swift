@@ -12,40 +12,34 @@ import AccessoryKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
-    private var accessoryView: KeyboardAccessoryView!
+
+    private lazy var keyButtons: [KeyboardAccessoryButton] = [
+        KeyboardAccessoryButton(type: .tab, position: .trailing),
+        KeyboardAccessoryButton(type: .undo, position: .leading) { [weak self] in
+            self?.undo()
+        },
+        KeyboardAccessoryButton(type: .redo, position: .leading) { [weak self] in
+            self?.redo()
+        },
+        KeyboardAccessoryButton(type: .header),
+        KeyboardAccessoryButton(type: .bold),
+        KeyboardAccessoryButton(type: .italic),
+        KeyboardAccessoryButton(type: .code),
+        KeyboardAccessoryButton(type: .delete),
+        KeyboardAccessoryButton(type: .item),
+        KeyboardAccessoryButton(type: .quote),
+        KeyboardAccessoryButton(type: .link, menu: createInsertMenu()),
+        KeyboardAccessoryButton(type: .image),
+        KeyboardAccessoryButton(title: "Esc", image: UIImage(systemName: "escape")),
+    ]
+    private lazy var accessoryManager = KeyboardAccessoryManager(keyButtons: keyButtons, delegate: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let keyButtons: [KeyboardAccessoryButton] = [
-            KeyboardAccessoryButton(type: .tab),
-            KeyboardAccessoryButton(type: .undo) { [weak self] in
-                self?.undo()
-            },
-            KeyboardAccessoryButton(type: .redo) { [weak self] in
-                self?.redo()
-            },
-            KeyboardAccessoryButton(type: .header),
-            KeyboardAccessoryButton(type: .bold),
-            KeyboardAccessoryButton(type: .italic),
-            KeyboardAccessoryButton(type: .code),
-            KeyboardAccessoryButton(type: .delete),
-            KeyboardAccessoryButton(type: .item),
-            KeyboardAccessoryButton(type: .quote),
-            KeyboardAccessoryButton(type: .link, menu: createInsertMenu()),
-            KeyboardAccessoryButton(type: .image),
-            KeyboardAccessoryButton(title: "Esc"),
-        ]
-        accessoryView = KeyboardAccessoryView(
-            frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 0),
-            keyButtons: keyButtons,
-            showDismissKeyboardKey: true,
-            delegate: self)
-        accessoryView.tintColor = .systemPink
-        accessoryView.setTintColor(.systemGreen, at: 5)
-        textView.inputAccessoryView = accessoryView
+
         textView.delegate = self
         textView.alwaysBounceVertical = true
+        accessoryManager.configure(textView: textView)
         updateAccessoryViewButtonEnabled()
     }
 
@@ -65,8 +59,8 @@ class ViewController: UIViewController {
     }
     
     private func updateAccessoryViewButtonEnabled() {
-        accessoryView.setEnabled(textView.undoManager?.canUndo ?? false, at: 1)
-        accessoryView.setEnabled(textView.undoManager?.canRedo ?? false, at: 2)
+//        accessoryView.setEnabled(textView.undoManager?.canUndo ?? false, at: 1)
+//        accessoryView.setEnabled(textView.undoManager?.canRedo ?? false, at: 2)
     }
 
     private func createInsertMenu() -> UIMenu {

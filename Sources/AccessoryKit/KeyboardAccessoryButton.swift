@@ -7,6 +7,16 @@
 
 import UIKit
 
+/// Position of keyboard accessory button. Only available on iPad.
+public enum KeyboardAccessoryButtonPosition {
+    /// Displayed as an independent button on the leading side of toolbar.
+    case leading
+    /// Displayed as an independent button on the trailing side of toolbar.
+    case trailing
+    /// Displayed as an inline menu option on the trailing side of toolbar.
+    case overflow
+}
+
 /// View model struct that represents a key button inside `KeyboardAccessoryView`.
 public struct KeyboardAccessoryButton {
 
@@ -43,6 +53,21 @@ public struct KeyboardAccessoryButton {
         .image: "photo",
     ]
 
+    private static let titleMap: [ButtonType: String] = [
+        .tab: "Tab",
+        .undo: "Undo",
+        .redo: "Redo",
+        .header: "Header",
+        .bold: "Bold",
+        .italic: "Italic",
+        .code: "Code",
+        .delete: "Delete",
+        .item: "Bullet",
+        .quote: "Quote",
+        .link: "Link",
+        .image: "Image",
+    ]
+
     // MARK: - Properties
 
     /// The image that is shown on the button.
@@ -58,6 +83,9 @@ public struct KeyboardAccessoryButton {
     /// sets tint color.
     public let tintColor: UIColor
 
+    /// The position of keyboard accessory button. Only available on iPad.
+    public let position: KeyboardAccessoryButtonPosition
+
     /// The tap handler that will be invoked when tapping the button.
     public let tapHandler: (() -> Void)?
 
@@ -71,13 +99,15 @@ public struct KeyboardAccessoryButton {
     ///   - title: The title that is shown on the button.
     ///   - font: The font of title label of button.
     ///   - image: The image that is shown on the button.
-    ///   - tintColor: The tint color of button.
+    ///   - tintColor: The tint color of button. Only available on `UITextInputView`.
+    ///   - position: The position of keyboard accessory button. Only available on iPad.
     ///   - menu: The menu that will be shown once button is tapped. Only available for iOS 14+.
     ///   - tapHandler: The tap handler that will be invoked when tapping the button.
     public init(title: String? = nil,
                 font: UIFont? = nil,
                 image: UIImage? = nil,
                 tintColor: UIColor = .systemBlue,
+                position: KeyboardAccessoryButtonPosition = .overflow,
                 menu: UIMenu? = nil,
                 tapHandler: (() -> Void)? = nil) {
         if title == nil && image == nil {
@@ -86,6 +116,7 @@ public struct KeyboardAccessoryButton {
         self.title = title
         self.font = font
         self.image = image
+        self.position = position
         self.tapHandler = tapHandler
         self.menu = menu
         self.tintColor = tintColor
@@ -94,17 +125,26 @@ public struct KeyboardAccessoryButton {
     /// Initialize the view model of key button with a given button type.
     /// - Parameters:
     ///   - type: Pre-defined button type.
+    ///   - tintColor: The tint color of button.
+    ///   - position: The position of keyboard accessory button. Only available on iPad.
+    ///   - menu: The menu that will be shown once button is tapped
     ///   - tapHandler: The tap handler that will be invoked when tapping the button.
-    ///   - menu: The menu that will be shown once button is tapped. Only available for iOS 14+.
     public init(type: ButtonType,
                 tintColor: UIColor = .systemBlue,
+                position: KeyboardAccessoryButtonPosition = .overflow,
                 menu: UIMenu? = nil,
                 tapHandler: (() -> Void)? = nil) {
         guard let imageName = Self.imageNameMap[type],
               let image = UIImage(systemName: imageName) else {
             fatalError("[AccessoryKit] Error: Do not have corresponding image for button type \(type)")
         }
-        self.init(image: image, tintColor: tintColor, menu: menu, tapHandler: tapHandler)
+        self.init(
+            title: Self.titleMap[type],
+            image: image,
+            tintColor: tintColor,
+            position: position,
+            menu: menu,
+            tapHandler: tapHandler)
     }
 
 }
