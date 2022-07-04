@@ -24,8 +24,12 @@ class KeyboardAccessoryButtonView: UIView {
 
         addSubview(button)
 
-        button.setImage(viewModel.image, for: .normal)
-        button.setTitle(viewModel.title, for: .normal)
+        /// Show either image or title, but don't show both.
+        if let image = viewModel.image {
+            button.setImage(image, for: .normal)
+        } else {
+            button.setTitle(viewModel.title, for: .normal)
+        }
 
         button.tintColor = viewModel.tintColor
         button.setTitleColor(viewModel.tintColor, for: .normal)
