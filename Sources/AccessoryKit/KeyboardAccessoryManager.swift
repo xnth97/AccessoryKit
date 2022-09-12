@@ -48,7 +48,7 @@ public class KeyboardAccessoryManager {
         if Self.isIPad {
             configure(inputAssistantItem: textView.inputAssistantItem)
         } else {
-            textView.inputView = makeInputView()
+            textView.inputAccessoryView = makeInputView()
         }
     }
 
