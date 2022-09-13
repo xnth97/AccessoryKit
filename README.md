@@ -14,6 +14,7 @@ A customizable, expandable, and easy-to-use input accessory view component for i
 
 The main features are:
 
+* Responsively uses `UITextInputAssistantItem` on iPad and `UITextInputView` on iPhone.
 * Scrollable input accessory view with blurry background and customizable buttons.
 * Supports Auto Layout and Safe Area.
 * Supports dark mode.
@@ -24,8 +25,8 @@ The main features are:
 
 ### Requirements
 
-* iOS 13.0+
-* Swift 5.3+
+* iOS 14.0+
+* Swift 5.5+
 
 ### Installation
 
@@ -44,47 +45,28 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ```swift
 // Create view model array of key buttons
 let keyButtons: [KeyboardAccessoryButton] = [
-    // Create button with built-in type and tap handler block
-    KeyboardAccessoryButton(type: .undo) { [weak self] in
+    // Create button with built-in type and tap handler block that will be placed on 
+    // the leading side of keyboard on iPad
+    KeyboardAccessoryButton(type: .undo, position: .leading) { [weak self] in
         self?.undo()
     },
-    // Create button with UIImage
-    KeyboardAccessoryButton(image: UIImage(named: "img"), tapHandler: {}),
+    // Create button with UIImage that will be collapsed in an overflow menu on iPad
+    KeyboardAccessoryButton(image: UIImage(named: "img"), position: .overflow),
     // Create button with title
-    KeyboardAccessoryButton(title: "Button", tapHandler: {}),
+    KeyboardAccessoryButton(title: "Button",
     // Create button with UIMenu
     KeyboardAccessoryButton(type: .link, menu: createInsertMenu()),
 ]
 
-// Initialize `KeyboardAccessoryView`
-let accessoryView = KeyboardAccessoryView(
-    frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 0),
+// Initialize and retain `KeyboardAccessoryManager`
+self.accessoryManager = KeyboardAccessoryView(
     keyButtons: keyButtons,
     showDismissKeyboardKey: true,
     delegate: self)
 
-// Assign the accessory view instance to `UITextView`
-textView.inputAccessoryView = accessoryView
-
-// Set tint color for the whole view
-accessoryView.tintColor = .systemPink
-// ...or at a given index
-accessoryView.setTintColor(.systemGreen, at: 5)
-
-// Set enabled at a given index
-accessoryView.setEnabled(false, at: 1)
+// Configures the `UITextView` with `KeyboardAccessoryManager`
+self.accessoryManager.configure(textView: textView)
 ```
-
-## TODO
-
-- [x] Support text title
-- [ ] Expose more APIs for customization
-- [x] Tint color
-- [ ] Tweak UI
-- [x] Use SF Symbol
-- [x] UIMenu support
-- [ ] UIAction support
-- [x] SPM support
 
 ## License
 

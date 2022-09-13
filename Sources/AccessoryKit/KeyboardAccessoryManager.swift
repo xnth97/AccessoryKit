@@ -26,6 +26,15 @@ public class KeyboardAccessoryManager {
 
     // MARK: - Initializer
 
+    /// Initializes an instance of `KeyboardAccessoryManager`.
+    /// - Parameters:
+    ///   - keyButtons: An array of `KeyboardAccessoryButton` model to construct the keys.
+    ///   - keyWidth: The width of each key inside input accessory view.
+    ///   - keyHeight: The height of each key inside input accessory view.
+    ///   - keyCornerRadius: The corner radius of each key inside input accessory view.
+    ///   - keyMargin: The margin between keys inside input accessory view.
+    ///   - showDismissKeyboardKey: If show the dismiss keyboard key on the right of scrollable area.
+    ///   - delegate: Delegate object that implements `KeyboardAccessoryViewDelegate`.
     public init(keyButtons: [KeyboardAccessoryButton] = [],
                 keyWidth: CGFloat = KeyboardAccessoryView.defaultKeyWidth,
                 keyHeight: CGFloat = KeyboardAccessoryView.defaultKeyHeight,
@@ -44,6 +53,10 @@ public class KeyboardAccessoryManager {
 
     // MARK: - Public APIs
 
+    /// Configures a `UITextView` with accessory manager instance. Uses `UITextInputView` on iPhone
+    /// (a toolbar above virtual keyboard) and `UITextInputAssistantItem` on iPad (embedded inside
+    /// the floating keyboard toolbar).
+    /// - Parameter textView: The text view instance to be configured.
     public func configure(textView: UITextView) {
         if Self.isIPad {
             configure(inputAssistantItem: textView.inputAssistantItem)
@@ -52,6 +65,8 @@ public class KeyboardAccessoryManager {
         }
     }
 
+    /// Creates an instance of toolbar view that can be assigned to the text view's `inputAccessoryView`.
+    /// - Returns: The keyboard accessory view instance.
     public func makeInputView() -> KeyboardAccessoryView {
         return KeyboardAccessoryView(
             keyWidth: keyWidth,
@@ -63,6 +78,8 @@ public class KeyboardAccessoryManager {
             delegate: delegate)
     }
 
+    /// Configures the `UITextInputAssistantItem` with given accessory manager.
+    /// - Parameter inputAssistantItem: The `UITextInputAssistantItem` to be configured.
     public func configure(inputAssistantItem: UITextInputAssistantItem) {
         var leadingButtons: [UIBarButtonItem] = []
         var trailingButtons: [UIBarButtonItem] = []
