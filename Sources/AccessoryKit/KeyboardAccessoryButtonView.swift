@@ -38,7 +38,7 @@ class KeyboardAccessoryButtonView: UIView {
             button.titleLabel?.font = font
         }
 
-        button.backgroundColor = .tertiarySystemGroupedBackground
+        button.backgroundColor = .secondarySystemBackground
 
         button.clipsToBounds = true
         button.layer.cornerRadius = cornerRadius
