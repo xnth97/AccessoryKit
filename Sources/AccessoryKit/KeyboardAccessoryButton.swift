@@ -82,6 +82,9 @@ public struct KeyboardAccessoryButton {
 
     // MARK: - Properties
 
+    /// The identifier of this button.
+    public let identifier: String?
+
     /// The image that is shown on the button.
     public let image: UIImage?
 
@@ -108,6 +111,7 @@ public struct KeyboardAccessoryButton {
 
     /// Initialize the view model of key button inside `KeyboardAccessoryView`.
     /// - Parameters:
+    ///   - identifier: The identifier of this button.
     ///   - title: The title that is shown on the button.
     ///   - font: The font of title label of button.
     ///   - image: The image that is shown on the button.
@@ -115,7 +119,8 @@ public struct KeyboardAccessoryButton {
     ///   - position: The position of keyboard accessory button. Only available on iPad.
     ///   - menu: The menu that will be shown once button is tapped. Only available for iOS 14+.
     ///   - tapHandler: The tap handler that will be invoked when tapping the button.
-    public init(title: String? = nil,
+    public init(identifier: String? = nil,
+                title: String? = nil,
                 font: UIFont? = nil,
                 image: UIImage? = nil,
                 tintColor: UIColor = Self.defaultTintColor,
@@ -125,6 +130,7 @@ public struct KeyboardAccessoryButton {
         if title == nil && image == nil {
             fatalError("[AccessoryKit] Error: Must provide a title or an image for button.")
         }
+        self.identifier = identifier
         self.title = title
         self.font = font
         self.image = image
@@ -136,12 +142,14 @@ public struct KeyboardAccessoryButton {
 
     /// Initialize the view model of key button with a given button type.
     /// - Parameters:
+    ///   - identifier: The identifier of this button.
     ///   - type: Pre-defined button type.
     ///   - tintColor: The tint color of button.
     ///   - position: The position of keyboard accessory button. Only available on iPad.
     ///   - menu: The menu that will be shown once button is tapped
     ///   - tapHandler: The tap handler that will be invoked when tapping the button.
-    public init(type: ButtonType,
+    public init(identifier: String? = nil,
+                type: ButtonType,
                 tintColor: UIColor = Self.defaultTintColor,
                 position: KeyboardAccessoryButtonPosition = .overflow,
                 menu: UIMenu? = nil,
@@ -151,6 +159,7 @@ public struct KeyboardAccessoryButton {
             fatalError("[AccessoryKit] Error: Do not have corresponding image for button type \(type)")
         }
         self.init(
+            identifier: identifier,
             title: Self.titleMap[type],
             image: image,
             tintColor: tintColor,

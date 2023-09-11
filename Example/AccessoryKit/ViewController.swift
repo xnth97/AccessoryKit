@@ -18,10 +18,10 @@ class ViewController: UIViewController {
             KeyboardAccessoryButton(type: .tab, position: .trailing),
         ],
         [
-            KeyboardAccessoryButton(type: .undo, position: .leading) { [weak self] in
+            KeyboardAccessoryButton(identifier: "undo", type: .undo, position: .leading) { [weak self] in
                 self?.undo()
             },
-            KeyboardAccessoryButton(type: .redo, position: .leading) { [weak self] in
+            KeyboardAccessoryButton(identifier: "redo", type: .redo, position: .leading) { [weak self] in
                 self?.redo()
             },
         ],
@@ -70,8 +70,8 @@ class ViewController: UIViewController {
     }
     
     private func updateAccessoryViewButtonEnabled() {
-//        accessoryView.setEnabled(textView.undoManager?.canUndo ?? false, at: 1)
-//        accessoryView.setEnabled(textView.undoManager?.canRedo ?? false, at: 2)
+        accessoryManager.setEnabled(textView.undoManager?.canUndo ?? false, for: "undo")
+        accessoryManager.setEnabled(textView.undoManager?.canRedo ?? false, for: "redo")
     }
 
     private func createInsertMenu() -> UIMenu {

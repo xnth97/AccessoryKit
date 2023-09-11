@@ -7,20 +7,20 @@
 
 import UIKit
 
+/// View for grouping multiple keyboard accessory buttons.
 class KeyboardAccessoryGroupView: UIView {
 
     private static let spacing: CGFloat = 2.0
 
-    private let viewModels: KeyboardAccessoryButtonGroup
     private let viewSize: CGSize
     private let stackView = UIStackView()
-    private let buttonViews: [KeyboardAccessoryButtonView]
+
+    let buttonViews: [KeyboardAccessoryButtonView]
 
     init(viewModels: KeyboardAccessoryButtonGroup,
          keyWidth: CGFloat,
          height: CGFloat,
          cornerRadius: CGFloat) {
-        self.viewModels = viewModels
         self.viewSize = Self.calculateSize(
             viewModels: viewModels,
             keyWidth: keyWidth,
@@ -35,10 +35,10 @@ class KeyboardAccessoryGroupView: UIView {
                 ignoreCornerRadius: true)
         }
         super.init(frame: CGRect(origin: .zero, size: viewSize))
-        setupViews(
-            keyWidth: keyWidth,
-            keyHeight: height,
-            cornerRadius: cornerRadius)
+        setupViews()
+
+        clipsToBounds = true
+        layer.cornerRadius = cornerRadius
     }
 
     @available(*, unavailable)
@@ -46,9 +46,7 @@ class KeyboardAccessoryGroupView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupViews(keyWidth: CGFloat,
-                            keyHeight: CGFloat,
-                            cornerRadius: CGFloat) {
+    private func setupViews() {
         addSubview(stackView)
 
         stackView.axis = .horizontal
@@ -65,9 +63,6 @@ class KeyboardAccessoryGroupView: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
-
-        clipsToBounds = true
-        layer.cornerRadius = cornerRadius
     }
 
     // MARK: - Overrides

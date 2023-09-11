@@ -39,6 +39,8 @@ public class KeyboardAccessoryView: UIInputView {
     private let keyButtonGroupViews: [KeyboardAccessoryGroupView]
     private let showDismissKeyboardKey: Bool
 
+    private var identifiedButtonViews: [String: KeyboardAccessoryButtonView] = [:]
+
     public var accessoryViewHeight: CGFloat {
         return 2 * keyMargin + keyHeight
     }
@@ -88,6 +90,14 @@ public class KeyboardAccessoryView: UIInputView {
         setupViews()
         
         autoresizingMask = .flexibleHeight
+
+        for groupView in keyButtonGroupViews {
+            for buttonView in groupView.buttonViews {
+                if let identifier = buttonView.viewModel.identifier {
+                    identifiedButtonViews[identifier] = buttonView
+                }
+            }
+        }
     }
 
     @available(*, unavailable)
@@ -176,27 +186,21 @@ public class KeyboardAccessoryView: UIInputView {
 
     // MARK: - APIs
 
-//    /// Set `isEnabled` value on the key of a given index.
-//    /// - Parameters:
-//    ///   - enabled: Boolean value indicating whether the key is enabled.
-//    ///   - index: Index of key in `KeyboardAccessoryView`.
-//    public func setEnabled(_ enabled: Bool, at index: Int) {
-//        guard index >= 0 && index < keyButtonViews.count else {
-//            return
-//        }
-//        keyButtonViews[index].isEnabled = enabled
-//    }
-//
-//    /// Set `tintColor` value on the key of a given index.
-//    /// - Parameters:
-//    ///   - tintColor: Tint color to be set.
-//    ///   - index: Index of key in `KeyboardAccessoryView`.
-//    public func setTintColor(_ tintColor: UIColor, at index: Int) {
-//        guard index >= 0 && index < keyButtonViews.count else {
-//            return
-//        }
-//        keyButtonViews[index].tintColor = tintColor
-//    }
+    /// Set `isEnabled` value on the key with a given identifier.
+    /// - Parameters:
+    ///   - enabled: Boolean value indicating whether the key is enabled.
+    ///   - identifier: Identifier of key in `KeyboardAccessoryView`.
+    public func setEnabled(_ enabled: Bool, for identifier: String) {
+        identifiedButtonViews[identifier]?.isEnabled = enabled
+    }
+
+    /// Set `tintColor` value on the key with a given identifier.
+    /// - Parameters:
+    ///   - tintColor: Tint color to be set.
+    ///   - identifier: Identifier of key in `KeyboardAccessoryView`.
+    public func setTintColor(_ tintColor: UIColor, for identifier: String) {
+        identifiedButtonViews[identifier]?.tintColor = tintColor
+    }
 
     /// Set `tintColor` for the whole accessory view.
     public override var tintColor: UIColor! {

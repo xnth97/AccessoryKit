@@ -22,7 +22,9 @@ public class KeyboardAccessoryManager {
     private let keyHeight: CGFloat
     private let keyCornerRadius: CGFloat
     private let showDismissKeyboardKey: Bool
+
     private weak var delegate: KeyboardAccessoryViewDelegate?
+    private var identifiedActionItems: [String: Any] = [:]
 
     // MARK: - Initializer
 
@@ -61,7 +63,7 @@ public class KeyboardAccessoryManager {
         if Self.isIPad {
             configure(inputAssistantItem: textView.inputAssistantItem)
         } else {
-            textView.inputAccessoryView = makeInputView()
+            textView.inputAccessoryView = inputAccessoryView
         }
     }
 
@@ -73,55 +75,69 @@ public class KeyboardAccessoryManager {
         if Self.isIPad {
             configure(inputAssistantItem: textField.inputAssistantItem)
         } else {
-            textField.inputAccessoryView = makeInputView()
+            textField.inputAccessoryView = inputAccessoryView
         }
     }
 
     /// Creates an instance of toolbar view that can be assigned to the text view's `inputAccessoryView`.
     /// - Returns: The keyboard accessory view instance.
-    public func makeInputView() -> KeyboardAccessoryView {
-        return KeyboardAccessoryView(
-            keyWidth: keyWidth,
-            keyHeight: keyHeight,
-            keyCornerRadius: keyCornerRadius,
-            keyMargin: keyMargin,
-            keyButtonGroups: keyButtonGroups,
-            showDismissKeyboardKey: showDismissKeyboardKey,
-            delegate: delegate)
-    }
+    public private(set) lazy var inputAccessoryView = KeyboardAccessoryView(
+        keyWidth: keyWidth,
+        keyHeight: keyHeight,
+        keyCornerRadius: keyCornerRadius,
+        keyMargin: keyMargin,
+        keyButtonGroups: keyButtonGroups,
+        showDismissKeyboardKey: showDismissKeyboardKey,
+        delegate: delegate)
 
     /// Configures the `UITextInputAssistantItem` with given accessory manager.
     /// - Parameter inputAssistantItem: The `UITextInputAssistantItem` to be configured.
     public func configure(inputAssistantItem: UITextInputAssistantItem) {
         var leadingButtons: [UIBarButtonItem] = []
         var trailingButtons: [UIBarButtonItem] = []
-        var overflowMenuActions: [UIAction] = []
+        var overflowMenuActions: [UIMenuElement] = []
 
-        for button in keyButtonGroups.flatMap({ $0 }) {
-            if button.position == .overflow {
-                guard let title = button.title else {
-                    fatalError("[AccessoryKit] Overflow button must have a title")
-                }
-                let action = UIAction(
-                    title: title,
-                    image: button.image,
-                    handler: { handler in
-                        button.tapHandler?()
-                    })
-                overflowMenuActions.append(action)
-            } else {
-                let buttonItem = UIBarButtonItem(
-                    title: button.title,
-                    image: button.image,
-                    primaryAction: UIAction(handler: { handler in
-                        button.tapHandler?()
-                    }),
-                    menu: button.menu)
-                if button.position == .leading {
-                    leadingButtons.append(buttonItem)
+        for buttonGroup in keyButtonGroups {
+            var groupOverflowActions: [UIAction] = []
+
+            for button in buttonGroup {
+                if button.position == .overflow {
+                    guard let title = button.title else {
+                        fatalError("[AccessoryKit] Overflow button must have a title")
+                    }
+                    let action = UIAction(
+                        title: title,
+                        image: button.image,
+                        handler: { handler in
+                            button.tapHandler?()
+                        })
+                    groupOverflowActions.append(action)
+
+                    if let identifier = button.identifier {
+                        identifiedActionItems[identifier] = action
+                    }
                 } else {
-                    trailingButtons.append(buttonItem)
+                    let buttonItem = UIBarButtonItem(
+                        title: button.title,
+                        image: button.image,
+                        primaryAction: UIAction(handler: { handler in
+                            button.tapHandler?()
+                        }),
+                        menu: button.menu)
+                    if button.position == .leading {
+                        leadingButtons.append(buttonItem)
+                    } else {
+                        trailingButtons.append(buttonItem)
+                    }
+                    if let identifier = button.identifier {
+                        identifiedActionItems[identifier] = buttonItem
+                    }
                 }
+            }
+
+            if !groupOverflowActions.isEmpty {
+                let groupedAction = UIMenu(title: "", options: .displayInline, children: groupOverflowActions)
+                overflowMenuActions.append(groupedAction)
             }
         }
 
@@ -155,6 +171,33 @@ public class KeyboardAccessoryManager {
                 barButtonItems: trailingButtons,
                 representativeItem: nil)
             inputAssistantItem.trailingBarButtonGroups = [trailingGroup]
+        }
+    }
+
+    // MARK: - API
+
+    /// Set `isEnabled` value on the key with a given identifier.
+    /// - Parameters:
+    ///   - enabled: Boolean value indicating whether the key is enabled.
+    ///   - identifier: Identifier of menu item.
+    public func setEnabled(_ enabled: Bool, for identifier: String) {
+        if Self.isIPad {
+            if let item = identifiedActionItems[identifier] {
+                switch item {
+                case is UIAction:
+                    if !enabled {
+                        (item as? UIAction)?.attributes = .disabled
+                    } else {
+                        (item as? UIAction)?.attributes = []
+                    }
+                case is UIBarButtonItem:
+                    (item as? UIBarButtonItem)?.isEnabled = enabled
+                default:
+                    break
+                }
+            }
+        } else {
+            inputAccessoryView.setEnabled(enabled, for: identifier)
         }
     }
 

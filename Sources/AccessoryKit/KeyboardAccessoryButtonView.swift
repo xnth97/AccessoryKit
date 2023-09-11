@@ -10,8 +10,8 @@ import UIKit
 /// Internal subview class that is represented by view model `KeyboardAccessoryButton`.
 class KeyboardAccessoryButtonView: UIView {
 
+    let viewModel: KeyboardAccessoryButton
     private let button = UIButton(type: .custom)
-    private let viewModel: KeyboardAccessoryButton
     private let viewSize: CGSize
 
     init(viewModel: KeyboardAccessoryButton,
