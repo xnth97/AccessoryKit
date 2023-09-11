@@ -17,6 +17,9 @@ public enum KeyboardAccessoryButtonPosition {
     case overflow
 }
 
+/// Typealias for a group of `KeyboardAccessoryButton`s.
+public typealias KeyboardAccessoryButtonGroup = [KeyboardAccessoryButton]
+
 /// View model struct that represents a key button inside `KeyboardAccessoryView`.
 public struct KeyboardAccessoryButton {
 
@@ -37,6 +40,15 @@ public struct KeyboardAccessoryButton {
     }
 
     // MARK: - Constants
+
+    /// Default tint color for buttons.
+    public static let defaultTintColor = UIColor { trait in
+        if trait.userInterfaceStyle == .light {
+            return UIColor.black
+        } else {
+            return UIColor.white
+        }
+    }
 
     private static let imageNameMap: [ButtonType: String] = [
         .tab: "increase.indent",
@@ -106,7 +118,7 @@ public struct KeyboardAccessoryButton {
     public init(title: String? = nil,
                 font: UIFont? = nil,
                 image: UIImage? = nil,
-                tintColor: UIColor = .systemBlue,
+                tintColor: UIColor = Self.defaultTintColor,
                 position: KeyboardAccessoryButtonPosition = .overflow,
                 menu: UIMenu? = nil,
                 tapHandler: (() -> Void)? = nil) {
@@ -130,7 +142,7 @@ public struct KeyboardAccessoryButton {
     ///   - menu: The menu that will be shown once button is tapped
     ///   - tapHandler: The tap handler that will be invoked when tapping the button.
     public init(type: ButtonType,
-                tintColor: UIColor = .systemBlue,
+                tintColor: UIColor = Self.defaultTintColor,
                 position: KeyboardAccessoryButtonPosition = .overflow,
                 menu: UIMenu? = nil,
                 tapHandler: (() -> Void)? = nil) {

@@ -21,7 +21,7 @@ public class KeyboardAccessoryView: UIInputView {
 
     // MARK: - Constants
 
-    public static let defaultKeyWidth: CGFloat = 60.0
+    public static let defaultKeyWidth: CGFloat = 40.0
     public static let defaultKeyHeight: CGFloat = 40.0
     public static let defaultKeyCornerRadius: CGFloat = 8.0
     public static let defaultKeyMargin: CGFloat = 8.0
@@ -36,7 +36,7 @@ public class KeyboardAccessoryView: UIInputView {
     private let keyWidth: CGFloat
     private let keyHeight: CGFloat
     private let keyCornerRadius: CGFloat
-    private let keyButtonViews: [KeyboardAccessoryButtonView]
+    private let keyButtonGroupViews: [KeyboardAccessoryGroupView]
     private let showDismissKeyboardKey: Bool
 
     public var accessoryViewHeight: CGFloat {
@@ -53,7 +53,7 @@ public class KeyboardAccessoryView: UIInputView {
     ///   - keyHeight: The height of each key inside `KeyboardAccessoryView`.
     ///   - keyCornerRadius: The corner radius of each key inside `KeyboardAccessoryView`.
     ///   - keyMargin: The margin between keys inside `KeyboardAccessoryView`.
-    ///   - keyButtons: An array of `KeyboardAccessoryButton` model to construct the keys.
+    ///   - keyButtonGroups: An array of `KeyboardAccessoryButtonGroup` model to construct the keys.
     ///   - showDismissKeyboardKey: If show the dismiss keyboard key on the right of scrollable area.
     ///   - delegate: Delegate object that implements `KeyboardAccessoryViewDelegate`.
     public init(frame: CGRect = .zero,
@@ -62,17 +62,17 @@ public class KeyboardAccessoryView: UIInputView {
                 keyHeight: CGFloat = KeyboardAccessoryView.defaultKeyHeight,
                 keyCornerRadius: CGFloat = KeyboardAccessoryView.defaultKeyCornerRadius,
                 keyMargin: CGFloat = KeyboardAccessoryView.defaultKeyMargin,
-                keyButtons: [KeyboardAccessoryButton] = [],
+                keyButtonGroups: [KeyboardAccessoryButtonGroup] = [],
                 showDismissKeyboardKey: Bool = true,
                 delegate: KeyboardAccessoryViewDelegate? = nil) {
         self.keyWidth = keyWidth
         self.keyHeight = keyHeight
         self.keyCornerRadius = keyCornerRadius
         self.keyMargin = keyMargin
-        self.keyButtonViews = keyButtons.map { buttonModel in
-            return KeyboardAccessoryButtonView(
-                viewModel: buttonModel,
-                width: keyWidth,
+        self.keyButtonGroupViews = keyButtonGroups.map { buttonGroup in
+            return KeyboardAccessoryGroupView(
+                viewModels: buttonGroup,
+                keyWidth: keyWidth,
                 height: keyHeight,
                 cornerRadius: keyCornerRadius)
         }
@@ -149,7 +149,7 @@ public class KeyboardAccessoryView: UIInputView {
             keysStackView.heightAnchor.constraint(equalToConstant: keyHeight),
         ])
 
-        keyButtonViews.forEach {
+        keyButtonGroupViews.forEach {
             addAccessoryKey(keyView: $0)
         }
 
@@ -176,34 +176,32 @@ public class KeyboardAccessoryView: UIInputView {
 
     // MARK: - APIs
 
-    /// Set `isEnabled` value on the key of a given index.
-    /// - Parameters:
-    ///   - enabled: Boolean value indicating whether the key is enabled.
-    ///   - index: Index of key in `KeyboardAccessoryView`.
-    public func setEnabled(_ enabled: Bool, at index: Int) {
-        guard index >= 0 && index < keyButtonViews.count else {
-            return
-        }
-        keyButtonViews[index].isEnabled = enabled
-    }
-
-    /// Set `tintColor` value on the key of a given index.
-    /// - Parameters:
-    ///   - tintColor: Tint color to be set.
-    ///   - index: Index of key in `KeyboardAccessoryView`.
-    public func setTintColor(_ tintColor: UIColor, at index: Int) {
-        guard index >= 0 && index < keyButtonViews.count else {
-            return
-        }
-        keyButtonViews[index].tintColor = tintColor
-    }
+//    /// Set `isEnabled` value on the key of a given index.
+//    /// - Parameters:
+//    ///   - enabled: Boolean value indicating whether the key is enabled.
+//    ///   - index: Index of key in `KeyboardAccessoryView`.
+//    public func setEnabled(_ enabled: Bool, at index: Int) {
+//        guard index >= 0 && index < keyButtonViews.count else {
+//            return
+//        }
+//        keyButtonViews[index].isEnabled = enabled
+//    }
+//
+//    /// Set `tintColor` value on the key of a given index.
+//    /// - Parameters:
+//    ///   - tintColor: Tint color to be set.
+//    ///   - index: Index of key in `KeyboardAccessoryView`.
+//    public func setTintColor(_ tintColor: UIColor, at index: Int) {
+//        guard index >= 0 && index < keyButtonViews.count else {
+//            return
+//        }
+//        keyButtonViews[index].tintColor = tintColor
+//    }
 
     /// Set `tintColor` for the whole accessory view.
     public override var tintColor: UIColor! {
         set {
-            for button in keyButtonViews {
-                button.tintColor = newValue
-            }
+            keyButtonGroupViews.forEach { $0.tintColor = newValue }
             super.tintColor = newValue
         }
         get {

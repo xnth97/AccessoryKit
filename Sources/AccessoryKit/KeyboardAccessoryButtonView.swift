@@ -17,7 +17,8 @@ class KeyboardAccessoryButtonView: UIView {
     init(viewModel: KeyboardAccessoryButton,
          width: CGFloat,
          height: CGFloat,
-         cornerRadius: CGFloat) {
+         cornerRadius: CGFloat,
+         ignoreCornerRadius: Bool = false) {
         self.viewModel = viewModel
         viewSize = CGSize(width: width, height: height)
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: height))
@@ -40,8 +41,11 @@ class KeyboardAccessoryButtonView: UIView {
 
         button.backgroundColor = .secondarySystemBackground
 
-        button.clipsToBounds = true
-        button.layer.cornerRadius = cornerRadius
+        if !ignoreCornerRadius {
+            button.clipsToBounds = true
+            button.layer.cornerRadius = cornerRadius
+        }
+
         button.translatesAutoresizingMaskIntoConstraints = false
         translatesAutoresizingMaskIntoConstraints = false
 

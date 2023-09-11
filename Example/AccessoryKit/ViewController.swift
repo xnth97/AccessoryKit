@@ -13,26 +13,37 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
 
-    private lazy var keyButtons: [KeyboardAccessoryButton] = [
-        KeyboardAccessoryButton(type: .tab, position: .trailing),
-        KeyboardAccessoryButton(type: .undo, position: .leading) { [weak self] in
-            self?.undo()
-        },
-        KeyboardAccessoryButton(type: .redo, position: .leading) { [weak self] in
-            self?.redo()
-        },
-        KeyboardAccessoryButton(type: .header),
-        KeyboardAccessoryButton(type: .bold),
-        KeyboardAccessoryButton(type: .italic),
-        KeyboardAccessoryButton(type: .code),
-        KeyboardAccessoryButton(type: .delete),
-        KeyboardAccessoryButton(type: .item),
-        KeyboardAccessoryButton(type: .quote),
-        KeyboardAccessoryButton(type: .link, menu: createInsertMenu()),
-        KeyboardAccessoryButton(type: .image),
-        KeyboardAccessoryButton(title: "Esc", image: UIImage(systemName: "escape")),
+    private lazy var keyButtonGroups: [KeyboardAccessoryButtonGroup] = [
+        [
+            KeyboardAccessoryButton(type: .tab, position: .trailing),
+        ],
+        [
+            KeyboardAccessoryButton(type: .undo, position: .leading) { [weak self] in
+                self?.undo()
+            },
+            KeyboardAccessoryButton(type: .redo, position: .leading) { [weak self] in
+                self?.redo()
+            },
+        ],
+        [
+
+            KeyboardAccessoryButton(type: .bold),
+            KeyboardAccessoryButton(type: .italic),
+            KeyboardAccessoryButton(type: .delete),
+        ],
+        [
+            KeyboardAccessoryButton(type: .link, menu: createInsertMenu()),
+            KeyboardAccessoryButton(type: .image),
+            KeyboardAccessoryButton(title: "Esc"),
+        ],
+        [
+            KeyboardAccessoryButton(type: .header),
+            KeyboardAccessoryButton(type: .code),
+            KeyboardAccessoryButton(type: .item),
+            KeyboardAccessoryButton(type: .quote),
+        ],
     ]
-    private lazy var accessoryManager = KeyboardAccessoryManager(keyButtons: keyButtons, delegate: self)
+    private lazy var accessoryManager = KeyboardAccessoryManager(keyButtonGroups: keyButtonGroups, delegate: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()

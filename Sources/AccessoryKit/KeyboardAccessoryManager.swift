@@ -16,7 +16,7 @@ public class KeyboardAccessoryManager {
 
     // MARK: - Private properties
 
-    private let keyButtons: [KeyboardAccessoryButton]
+    private let keyButtonGroups: [KeyboardAccessoryButtonGroup]
     private let keyMargin: CGFloat
     private let keyWidth: CGFloat
     private let keyHeight: CGFloat
@@ -28,21 +28,21 @@ public class KeyboardAccessoryManager {
 
     /// Initializes an instance of `KeyboardAccessoryManager`.
     /// - Parameters:
-    ///   - keyButtons: An array of `KeyboardAccessoryButton` model to construct the keys.
+    ///   - keyButtonGroups: An array of `KeyboardAccessoryButtonGroup` model to construct the keys.
     ///   - keyWidth: The width of each key inside input accessory view.
     ///   - keyHeight: The height of each key inside input accessory view.
     ///   - keyCornerRadius: The corner radius of each key inside input accessory view.
     ///   - keyMargin: The margin between keys inside input accessory view.
     ///   - showDismissKeyboardKey: If show the dismiss keyboard key on the right of scrollable area.
     ///   - delegate: Delegate object that implements `KeyboardAccessoryViewDelegate`.
-    public init(keyButtons: [KeyboardAccessoryButton] = [],
+    public init(keyButtonGroups: [KeyboardAccessoryButtonGroup] = [],
                 keyWidth: CGFloat = KeyboardAccessoryView.defaultKeyWidth,
                 keyHeight: CGFloat = KeyboardAccessoryView.defaultKeyHeight,
                 keyCornerRadius: CGFloat = KeyboardAccessoryView.defaultKeyCornerRadius,
                 keyMargin: CGFloat = KeyboardAccessoryView.defaultKeyMargin,
                 showDismissKeyboardKey: Bool = true,
                 delegate: KeyboardAccessoryViewDelegate? = nil) {
-        self.keyButtons = keyButtons
+        self.keyButtonGroups = keyButtonGroups
         self.keyMargin = keyMargin
         self.keyWidth = keyWidth
         self.keyHeight = keyHeight
@@ -65,6 +65,18 @@ public class KeyboardAccessoryManager {
         }
     }
 
+    /// Configures a `UITextField` with accessory manager instance. Uses `UITextInputView` on iPhone
+    /// (a toolbar above virtual keyboard) and `UITextInputAssistantItem` on iPad (embedded inside
+    /// the floating keyboard toolbar).
+    /// - Parameter textField: The text field instance to be cofigured.
+    public func configure(textField: UITextField) {
+        if Self.isIPad {
+            configure(inputAssistantItem: textField.inputAssistantItem)
+        } else {
+            textField.inputAccessoryView = makeInputView()
+        }
+    }
+
     /// Creates an instance of toolbar view that can be assigned to the text view's `inputAccessoryView`.
     /// - Returns: The keyboard accessory view instance.
     public func makeInputView() -> KeyboardAccessoryView {
@@ -73,7 +85,7 @@ public class KeyboardAccessoryManager {
             keyHeight: keyHeight,
             keyCornerRadius: keyCornerRadius,
             keyMargin: keyMargin,
-            keyButtons: keyButtons,
+            keyButtonGroups: keyButtonGroups,
             showDismissKeyboardKey: showDismissKeyboardKey,
             delegate: delegate)
     }
@@ -85,7 +97,7 @@ public class KeyboardAccessoryManager {
         var trailingButtons: [UIBarButtonItem] = []
         var overflowMenuActions: [UIAction] = []
 
-        for button in keyButtons {
+        for button in keyButtonGroups.flatMap({ $0 }) {
             if button.position == .overflow {
                 guard let title = button.title else {
                     fatalError("[AccessoryKit] Overflow button must have a title")

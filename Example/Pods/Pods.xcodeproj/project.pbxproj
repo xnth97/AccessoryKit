@@ -7,31 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02F8EDA237C791D45B8F76377C8A407C /* KeyboardAccessoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B78AC32E9C8A7AC4694B8563D287726 /* KeyboardAccessoryButtonView.swift */; };
-		1464D08A1C7676F32AE9F63546E4FCB8 /* KeyboardAccessoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FBB8B262BF41E06A6D7FC4CB27D1AE /* KeyboardAccessoryManager.swift */; };
-		34F3F9FDDCC684EE7E5E359DDB9E0AF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
-		4E6835820C8D44E22C5F7A4E8315D630 /* KeyboardAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991ED14084B85C296164D1FDC3D56 /* KeyboardAccessoryView.swift */; };
+		1274D1F75C3C59967B2011F1D50AC0EE /* KeyboardAccessoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6ACFF3FAF5A4F4BD521FC79F08E5CC /* KeyboardAccessoryManager.swift */; };
+		249011DAED0453F8AFF31A5E57C0F7D1 /* AccessoryKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD43E9EF2C941804D6889F062372B28 /* AccessoryKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32B7E4C8418AD451772CFF6446EE5019 /* KeyboardAccessoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0173238FB4342950DC718DB1B5F55DC4 /* KeyboardAccessoryButtonView.swift */; };
+		4F95658399C4506447F4742D84D9D869 /* KeyboardAccessoryGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8522DB2F8D4B70A3CC3D5C6D6FFD55D8 /* KeyboardAccessoryGroupView.swift */; };
 		6AFB623F51359C74734404DA58A888F1 /* Pods-AccessoryKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CAFE1F59045BCAE59A5B363FAA1D38E2 /* Pods-AccessoryKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		74A7DA821C974A79CC06B98DD236B042 /* AccessoryKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C8F082429EC9E70D72084C8EBF35145 /* AccessoryKit-dummy.m */; };
-		8570E1CB9A652B8F36E147DE1B87CAAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		92954256923056F92D305D48C9A3CC11 /* KeyboardAccessoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD4437382A624FD41C7FB5298B18B5 /* KeyboardAccessoryButton.swift */; };
-		94DE36B8FC84F344DD4E9E713D687A64 /* AccessoryKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 82C9AE1C553F66588FE50D468766B296 /* AccessoryKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83DDA12FC231AE3DC43FB522D96AD438 /* AccessoryKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC810780F62041247FEF674FE4EA9B50 /* AccessoryKit-dummy.m */; };
+		A5FEB863D2235F5D025845AC23D21484 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
 		A623C22375096EA0867AC7819072CA2D /* Pods-AccessoryKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D831BDB2C7700CA23F5EA0D2260375 /* Pods-AccessoryKit_Tests-dummy.m */; };
 		B45324D2DDB4FDFE4694968887B61613 /* Pods-AccessoryKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B7CE798F91A678A2A35CBB0F83D83F9 /* Pods-AccessoryKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B93B87691E93CF9B2534CE27E2605A81 /* KeyboardAccessoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EA4109387984720867F3B900AA503A /* KeyboardAccessoryButton.swift */; };
+		BE2A0B611D2DEA5B117EBCD3D07BB94E /* KeyboardAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249FBCB096B91BFB37D9D09C83DB6397 /* KeyboardAccessoryView.swift */; };
 		C0D5DF960A44610DA196E96802CFE8E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 		D4ECAA3C105C8F04B3B63529B3952CDE /* Pods-AccessoryKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4468F258C7B3E09237D7F013A78F1305 /* Pods-AccessoryKit_Example-dummy.m */; };
 		F9EFB914E6D9024193CA55CF62F9A080 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		FDC2345CC784581252DBA553E01B8A13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		589065A513CF1A60BB97FAAD1F7F7B85 /* PBXContainerItemProxy */ = {
+		31A2625DB1241E0350381065858068FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BF0BE039C8FE8B1041CE952EFC786CC4;
 			remoteInfo = "Pods-AccessoryKit_Example";
 		};
-		A6C9DA869F68DA0E34DE284299736988 /* PBXContainerItemProxy */ = {
+		C6CE990B4D8349688890866F4B21D0C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -41,42 +42,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04597783578E04389595F332F91D4B53 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		0173238FB4342950DC718DB1B5F55DC4 /* KeyboardAccessoryButtonView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryButtonView.swift; path = Sources/AccessoryKit/KeyboardAccessoryButtonView.swift; sourceTree = "<group>"; };
 		1045A4116C890857285AFAE309AF7972 /* Pods-AccessoryKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AccessoryKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		1342D20A450E95B38B8C239A3764F785 /* AccessoryKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AccessoryKit.modulemap; sourceTree = "<group>"; };
 		17B7DA167B9F6EF4A087B2C9A3356825 /* Pods-AccessoryKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AccessoryKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		19708C8C0431473B36893F947DDCDFE9 /* Pods-AccessoryKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AccessoryKit_Example.modulemap"; sourceTree = "<group>"; };
-		1B78AC32E9C8A7AC4694B8563D287726 /* KeyboardAccessoryButtonView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryButtonView.swift; path = Sources/AccessoryKit/KeyboardAccessoryButtonView.swift; sourceTree = "<group>"; };
-		2FEFBCCB20BD6A223718BE00068E0B64 /* AccessoryKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AccessoryKit.debug.xcconfig; sourceTree = "<group>"; };
-		3EBA752172E100476B0CE2DCC966D343 /* AccessoryKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AccessoryKit-prefix.pch"; sourceTree = "<group>"; };
-		42FBB8B262BF41E06A6D7FC4CB27D1AE /* KeyboardAccessoryManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryManager.swift; path = Sources/AccessoryKit/KeyboardAccessoryManager.swift; sourceTree = "<group>"; };
+		249FBCB096B91BFB37D9D09C83DB6397 /* KeyboardAccessoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryView.swift; path = Sources/AccessoryKit/KeyboardAccessoryView.swift; sourceTree = "<group>"; };
+		26EA4109387984720867F3B900AA503A /* KeyboardAccessoryButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryButton.swift; path = Sources/AccessoryKit/KeyboardAccessoryButton.swift; sourceTree = "<group>"; };
+		2D03D28B4BBFC11C7B4DFD35F4B2FFAE /* AccessoryKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AccessoryKit.release.xcconfig; sourceTree = "<group>"; };
 		4468F258C7B3E09237D7F013A78F1305 /* Pods-AccessoryKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AccessoryKit_Example-dummy.m"; sourceTree = "<group>"; };
+		5C1BA14E0857592DC0B2B2846CE2A5B6 /* AccessoryKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AccessoryKit.modulemap; sourceTree = "<group>"; };
 		602DF41261B2418A936B86806A46B605 /* Pods-AccessoryKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AccessoryKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		660AA1BF4671632622317DDDC821DF8D /* Pods-AccessoryKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AccessoryKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		68819BDBB971C5CE8347566477707040 /* Pods-AccessoryKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AccessoryKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6C8F082429EC9E70D72084C8EBF35145 /* AccessoryKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AccessoryKit-dummy.m"; sourceTree = "<group>"; };
+		6F6F055ABFB416110A28BF089161E6D6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		7AE58D98AF7634F08F1597C780B131A1 /* AccessoryKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AccessoryKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7D028EA6FF572A474C5572A1E3D2D880 /* Pods-AccessoryKit_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AccessoryKit_Example-Info.plist"; sourceTree = "<group>"; };
+		7D6ACFF3FAF5A4F4BD521FC79F08E5CC /* KeyboardAccessoryManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryManager.swift; path = Sources/AccessoryKit/KeyboardAccessoryManager.swift; sourceTree = "<group>"; };
 		7F6B3AF8E2F11424EE48119AD9A922A3 /* AccessoryKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AccessoryKit; path = AccessoryKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		82110C69479BB45C3D4AF20D91ADA972 /* AccessoryKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AccessoryKit-Info.plist"; sourceTree = "<group>"; };
-		82C9AE1C553F66588FE50D468766B296 /* AccessoryKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AccessoryKit-umbrella.h"; sourceTree = "<group>"; };
+		8522DB2F8D4B70A3CC3D5C6D6FFD55D8 /* KeyboardAccessoryGroupView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryGroupView.swift; path = Sources/AccessoryKit/KeyboardAccessoryGroupView.swift; sourceTree = "<group>"; };
 		8B7CE798F91A678A2A35CBB0F83D83F9 /* Pods-AccessoryKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AccessoryKit_Example-umbrella.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A4A991ED14084B85C296164D1FDC3D56 /* KeyboardAccessoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryView.swift; path = Sources/AccessoryKit/KeyboardAccessoryView.swift; sourceTree = "<group>"; };
 		A79130208F86E978498FE2A05FDF01D8 /* Pods-AccessoryKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AccessoryKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B4FD20BBA570F47EE2E176FEB80EAB5C /* Pods-AccessoryKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AccessoryKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B7D831BDB2C7700CA23F5EA0D2260375 /* Pods-AccessoryKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AccessoryKit_Tests-dummy.m"; sourceTree = "<group>"; };
-		B8F56DAD2686A885F9DEBE4A03EAAC5D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		BE1C5DEB15C6274ACE99C0DBC17F756F /* Pods-AccessoryKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AccessoryKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		CAFE1F59045BCAE59A5B363FAA1D38E2 /* Pods-AccessoryKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AccessoryKit_Tests-umbrella.h"; sourceTree = "<group>"; };
 		CC419F4F4CE9852480C54BFD77889C9D /* Pods-AccessoryKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AccessoryKit_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CF4CCFD567F972CBDE70CE582D7D116F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		D0BE8A169855CA7954F7E8D27AD1EC1C /* Pods-AccessoryKit_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AccessoryKit_Tests-Info.plist"; sourceTree = "<group>"; };
-		D1DD4437382A624FD41C7FB5298B18B5 /* KeyboardAccessoryButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardAccessoryButton.swift; path = Sources/AccessoryKit/KeyboardAccessoryButton.swift; sourceTree = "<group>"; };
 		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		DC29F6F24432F5DE00F97AD51D5E1E0E /* AccessoryKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AccessoryKit.release.xcconfig; sourceTree = "<group>"; };
+		D6259CCBBE6E247AFFB90D826292BAEF /* AccessoryKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AccessoryKit-Info.plist"; sourceTree = "<group>"; };
+		D78AE4CA164BAEC355C9368E73C86308 /* AccessoryKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AccessoryKit.debug.xcconfig; sourceTree = "<group>"; };
+		D87A259DA8E40208E3A0B91F9EE9B868 /* AccessoryKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AccessoryKit-prefix.pch"; sourceTree = "<group>"; };
 		E6254BA1FE4691F89D24EF38016B0CB4 /* Pods-AccessoryKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AccessoryKit_Tests.modulemap"; sourceTree = "<group>"; };
 		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EAD43E9EF2C941804D6889F062372B28 /* AccessoryKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AccessoryKit-umbrella.h"; sourceTree = "<group>"; };
 		EB8E72FDE1444CDEFB8DEC9EFD439980 /* Pods-AccessoryKit_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AccessoryKit_Tests"; path = Pods_AccessoryKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F111E94065124F2760404731311CBA6E /* AccessoryKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AccessoryKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EC810780F62041247FEF674FE4EA9B50 /* AccessoryKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AccessoryKit-dummy.m"; sourceTree = "<group>"; };
 		F7D42910332CF34980F117284C91E1BC /* Pods-AccessoryKit_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AccessoryKit_Example"; path = Pods_AccessoryKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -89,20 +91,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		162CA054C3695D6922EC9A91FF8F87A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDC2345CC784581252DBA553E01B8A13 /* Foundation.framework in Frameworks */,
+				A5FEB863D2235F5D025845AC23D21484 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		959AC2170C97A2BEDCD6CBAD6A9DDB24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F9EFB914E6D9024193CA55CF62F9A080 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A3204681A09D9D09DC0D75547DAC6DF8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8570E1CB9A652B8F36E147DE1B87CAAB /* Foundation.framework in Frameworks */,
-				34F3F9FDDCC684EE7E5E359DDB9E0AF2 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +119,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1E60DEE48CCF852FDB55185CFB7907A8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C1BA14E0857592DC0B2B2846CE2A5B6 /* AccessoryKit.modulemap */,
+				EC810780F62041247FEF674FE4EA9B50 /* AccessoryKit-dummy.m */,
+				D6259CCBBE6E247AFFB90D826292BAEF /* AccessoryKit-Info.plist */,
+				D87A259DA8E40208E3A0B91F9EE9B868 /* AccessoryKit-prefix.pch */,
+				EAD43E9EF2C941804D6889F062372B28 /* AccessoryKit-umbrella.h */,
+				D78AE4CA164BAEC355C9368E73C86308 /* AccessoryKit.debug.xcconfig */,
+				2D03D28B4BBFC11C7B4DFD35F4B2FFAE /* AccessoryKit.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/AccessoryKit";
+			sourceTree = "<group>";
+		};
 		2374B9A0B14810158BFD50ADA5128238 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,19 +143,12 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		42410BF8628EFE968B9ADE9B5D445696 /* Support Files */ = {
+		3B2CE8D65DF08222C8FE4C151100FFC7 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1342D20A450E95B38B8C239A3764F785 /* AccessoryKit.modulemap */,
-				6C8F082429EC9E70D72084C8EBF35145 /* AccessoryKit-dummy.m */,
-				82110C69479BB45C3D4AF20D91ADA972 /* AccessoryKit-Info.plist */,
-				3EBA752172E100476B0CE2DCC966D343 /* AccessoryKit-prefix.pch */,
-				82C9AE1C553F66588FE50D468766B296 /* AccessoryKit-umbrella.h */,
-				2FEFBCCB20BD6A223718BE00068E0B64 /* AccessoryKit.debug.xcconfig */,
-				DC29F6F24432F5DE00F97AD51D5E1E0E /* AccessoryKit.release.xcconfig */,
+				FDEB13501608DF8B0E8461155E61B972 /* AccessoryKit */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/AccessoryKit";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
@@ -148,20 +158,6 @@
 				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		77C784EBBF94B752B8A4FABFF1B142D7 /* AccessoryKit */ = {
-			isa = PBXGroup;
-			children = (
-				D1DD4437382A624FD41C7FB5298B18B5 /* KeyboardAccessoryButton.swift */,
-				1B78AC32E9C8A7AC4694B8563D287726 /* KeyboardAccessoryButtonView.swift */,
-				42FBB8B262BF41E06A6D7FC4CB27D1AE /* KeyboardAccessoryManager.swift */,
-				A4A991ED14084B85C296164D1FDC3D56 /* KeyboardAccessoryView.swift */,
-				DD4E0136DAD69D1E0A44F8109698C7BB /* Pod */,
-				42410BF8628EFE968B9ADE9B5D445696 /* Support Files */,
-			);
-			name = AccessoryKit;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		920ADEFABEDBC2AE1A023D1BBABB502D /* Products */ = {
@@ -190,6 +186,16 @@
 			path = "Target Support Files/Pods-AccessoryKit_Tests";
 			sourceTree = "<group>";
 		};
+		B587A683B35DE95741B1B68E628F0783 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				7AE58D98AF7634F08F1597C780B131A1 /* AccessoryKit.podspec */,
+				CF4CCFD567F972CBDE70CE582D7D116F /* LICENSE */,
+				6F6F055ABFB416110A28BF089161E6D6 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		CB5C444AA3CDEB5A2FE3978EC7741967 /* Pods-AccessoryKit_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,29 +217,26 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				EC8BB1FB4FCD446AFEBC669824960C51 /* Development Pods */,
+				3B2CE8D65DF08222C8FE4C151100FFC7 /* Development Pods */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
 				920ADEFABEDBC2AE1A023D1BBABB502D /* Products */,
 				2374B9A0B14810158BFD50ADA5128238 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		DD4E0136DAD69D1E0A44F8109698C7BB /* Pod */ = {
+		FDEB13501608DF8B0E8461155E61B972 /* AccessoryKit */ = {
 			isa = PBXGroup;
 			children = (
-				F111E94065124F2760404731311CBA6E /* AccessoryKit.podspec */,
-				04597783578E04389595F332F91D4B53 /* LICENSE */,
-				B8F56DAD2686A885F9DEBE4A03EAAC5D /* README.md */,
+				26EA4109387984720867F3B900AA503A /* KeyboardAccessoryButton.swift */,
+				0173238FB4342950DC718DB1B5F55DC4 /* KeyboardAccessoryButtonView.swift */,
+				8522DB2F8D4B70A3CC3D5C6D6FFD55D8 /* KeyboardAccessoryGroupView.swift */,
+				7D6ACFF3FAF5A4F4BD521FC79F08E5CC /* KeyboardAccessoryManager.swift */,
+				249FBCB096B91BFB37D9D09C83DB6397 /* KeyboardAccessoryView.swift */,
+				B587A683B35DE95741B1B68E628F0783 /* Pod */,
+				1E60DEE48CCF852FDB55185CFB7907A8 /* Support Files */,
 			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		EC8BB1FB4FCD446AFEBC669824960C51 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				77C784EBBF94B752B8A4FABFF1B142D7 /* AccessoryKit */,
-			);
-			name = "Development Pods";
+			name = AccessoryKit;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,19 +250,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42F2F747CB3C7AB2FE3F114DCDB4D620 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				249011DAED0453F8AFF31A5E57C0F7D1 /* AccessoryKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DB80B5830B88B079201F6C0F134FB55 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6AFB623F51359C74734404DA58A888F1 /* Pods-AccessoryKit_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CCA8ECF52345CAFBAF4734952F0526B8 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				94DE36B8FC84F344DD4E9E713D687A64 /* AccessoryKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +281,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				ACC87A4A87930124FD949B95CFB9F2AE /* PBXTargetDependency */,
+				1168EA3D1735A822B965A81ED0AB815E /* PBXTargetDependency */,
 			);
 			name = "Pods-AccessoryKit_Tests";
 			productName = Pods_AccessoryKit_Tests;
@@ -287,12 +290,12 @@
 		};
 		6425C82BABEC4581D5A9A5C1B054D60B /* AccessoryKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6724D727FABA462F19DF319C9AB95E78 /* Build configuration list for PBXNativeTarget "AccessoryKit" */;
+			buildConfigurationList = 5B570F9E177B5E95E83C3B132953C85A /* Build configuration list for PBXNativeTarget "AccessoryKit" */;
 			buildPhases = (
-				CCA8ECF52345CAFBAF4734952F0526B8 /* Headers */,
-				94A50C0CD9AC04F9EEC2663D1E46486F /* Sources */,
-				A3204681A09D9D09DC0D75547DAC6DF8 /* Frameworks */,
-				BAE9055D8582ADCBB6AE347CA374DA10 /* Resources */,
+				42F2F747CB3C7AB2FE3F114DCDB4D620 /* Headers */,
+				7E2C6AADE2CEFF48ABF998D5A7BCCC94 /* Sources */,
+				162CA054C3695D6922EC9A91FF8F87A0 /* Frameworks */,
+				093AA8CDEE3898CE13A0435BBBC936A0 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -315,7 +318,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				6A188C3E408B24717EF7E172439FD91A /* PBXTargetDependency */,
+				895303D3C9174C9ADF12809E054D05F2 /* PBXTargetDependency */,
 			);
 			name = "Pods-AccessoryKit_Example";
 			productName = Pods_AccessoryKit_Example;
@@ -352,6 +355,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		093AA8CDEE3898CE13A0435BBBC936A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AA1626A3568CE4140ED24834F9CB0CF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,13 +370,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		94DE43DBD4BADC00DB702332912F6B4C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BAE9055D8582ADCBB6AE347CA374DA10 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -384,15 +387,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94A50C0CD9AC04F9EEC2663D1E46486F /* Sources */ = {
+		7E2C6AADE2CEFF48ABF998D5A7BCCC94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74A7DA821C974A79CC06B98DD236B042 /* AccessoryKit-dummy.m in Sources */,
-				92954256923056F92D305D48C9A3CC11 /* KeyboardAccessoryButton.swift in Sources */,
-				02F8EDA237C791D45B8F76377C8A407C /* KeyboardAccessoryButtonView.swift in Sources */,
-				1464D08A1C7676F32AE9F63546E4FCB8 /* KeyboardAccessoryManager.swift in Sources */,
-				4E6835820C8D44E22C5F7A4E8315D630 /* KeyboardAccessoryView.swift in Sources */,
+				83DDA12FC231AE3DC43FB522D96AD438 /* AccessoryKit-dummy.m in Sources */,
+				B93B87691E93CF9B2534CE27E2605A81 /* KeyboardAccessoryButton.swift in Sources */,
+				32B7E4C8418AD451772CFF6446EE5019 /* KeyboardAccessoryButtonView.swift in Sources */,
+				4F95658399C4506447F4742D84D9D869 /* KeyboardAccessoryGroupView.swift in Sources */,
+				1274D1F75C3C59967B2011F1D50AC0EE /* KeyboardAccessoryManager.swift in Sources */,
+				BE2A0B611D2DEA5B117EBCD3D07BB94E /* KeyboardAccessoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,17 +411,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6A188C3E408B24717EF7E172439FD91A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AccessoryKit;
-			target = 6425C82BABEC4581D5A9A5C1B054D60B /* AccessoryKit */;
-			targetProxy = A6C9DA869F68DA0E34DE284299736988 /* PBXContainerItemProxy */;
-		};
-		ACC87A4A87930124FD949B95CFB9F2AE /* PBXTargetDependency */ = {
+		1168EA3D1735A822B965A81ED0AB815E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-AccessoryKit_Example";
 			target = BF0BE039C8FE8B1041CE952EFC786CC4 /* Pods-AccessoryKit_Example */;
-			targetProxy = 589065A513CF1A60BB97FAAD1F7F7B85 /* PBXContainerItemProxy */;
+			targetProxy = 31A2625DB1241E0350381065858068FE /* PBXContainerItemProxy */;
+		};
+		895303D3C9174C9ADF12809E054D05F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AccessoryKit;
+			target = 6425C82BABEC4581D5A9A5C1B054D60B /* AccessoryKit */;
+			targetProxy = C6CE990B4D8349688890866F4B21D0C0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -525,9 +529,9 @@
 			};
 			name = Debug;
 		};
-		303A742498F6839CB2544EB7759AD91E /* Debug */ = {
+		1F852AD03BF8800DD2DCD4A3E5614C44 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FEFBCCB20BD6A223718BE00068E0B64 /* AccessoryKit.debug.xcconfig */;
+			baseConfigurationReference = D78AE4CA164BAEC355C9368E73C86308 /* AccessoryKit.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -550,7 +554,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.5;
+				SWIFT_VERSION = 5.7;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -720,9 +724,9 @@
 			};
 			name = Release;
 		};
-		B1971FD6DA240406FCDCBF4F273B4E8B /* Release */ = {
+		AAF69E94CCCE666A176989E17833B667 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC29F6F24432F5DE00F97AD51D5E1E0E /* AccessoryKit.release.xcconfig */;
+			baseConfigurationReference = 2D03D28B4BBFC11C7B4DFD35F4B2FFAE /* AccessoryKit.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -745,7 +749,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.5;
+				SWIFT_VERSION = 5.7;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -765,11 +769,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6724D727FABA462F19DF319C9AB95E78 /* Build configuration list for PBXNativeTarget "AccessoryKit" */ = {
+		5B570F9E177B5E95E83C3B132953C85A /* Build configuration list for PBXNativeTarget "AccessoryKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				303A742498F6839CB2544EB7759AD91E /* Debug */,
-				B1971FD6DA240406FCDCBF4F273B4E8B /* Release */,
+				1F852AD03BF8800DD2DCD4A3E5614C44 /* Debug */,
+				AAF69E94CCCE666A176989E17833B667 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
