@@ -40,6 +40,7 @@ class KeyboardAccessoryButtonView: UIView {
         }
 
         button.backgroundColor = .secondarySystemBackground
+        button.isPointerInteractionEnabled = true
 
         if !ignoreCornerRadius {
             button.clipsToBounds = true

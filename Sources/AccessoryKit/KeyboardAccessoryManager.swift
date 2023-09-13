@@ -22,6 +22,7 @@ public class KeyboardAccessoryManager {
     private let keyHeight: CGFloat
     private let keyCornerRadius: CGFloat
     private let showDismissKeyboardKey: Bool
+    private let preferInputAssistantItem: Bool
 
     private weak var delegate: KeyboardAccessoryViewDelegate?
     private var identifiedActionItems: [String: Any] = [:]
@@ -36,6 +37,7 @@ public class KeyboardAccessoryManager {
     ///   - keyCornerRadius: The corner radius of each key inside input accessory view.
     ///   - keyMargin: The margin between keys inside input accessory view.
     ///   - showDismissKeyboardKey: If show the dismiss keyboard key on the right of scrollable area.
+    ///   - preferInputAssistantItem: Prefer `UITextInputAssistantItem` on iPads.
     ///   - delegate: Delegate object that implements `KeyboardAccessoryViewDelegate`.
     public init(keyButtonGroups: [KeyboardAccessoryButtonGroup] = [],
                 keyWidth: CGFloat = KeyboardAccessoryView.defaultKeyWidth,
@@ -43,6 +45,7 @@ public class KeyboardAccessoryManager {
                 keyCornerRadius: CGFloat = KeyboardAccessoryView.defaultKeyCornerRadius,
                 keyMargin: CGFloat = KeyboardAccessoryView.defaultKeyMargin,
                 showDismissKeyboardKey: Bool = true,
+                preferInputAssistantItem: Bool = true,
                 delegate: KeyboardAccessoryViewDelegate? = nil) {
         self.keyButtonGroups = keyButtonGroups
         self.keyMargin = keyMargin
@@ -50,6 +53,7 @@ public class KeyboardAccessoryManager {
         self.keyHeight = keyHeight
         self.keyCornerRadius = keyCornerRadius
         self.showDismissKeyboardKey = showDismissKeyboardKey
+        self.preferInputAssistantItem = preferInputAssistantItem
         self.delegate = delegate
     }
 
@@ -60,7 +64,7 @@ public class KeyboardAccessoryManager {
     /// the floating keyboard toolbar).
     /// - Parameter textView: The text view instance to be configured.
     public func configure(textView: UITextView) {
-        if Self.isIPad {
+        if canUseInputAssistantItem {
             configure(inputAssistantItem: textView.inputAssistantItem)
         } else {
             textView.inputAccessoryView = inputAccessoryView
@@ -72,7 +76,7 @@ public class KeyboardAccessoryManager {
     /// the floating keyboard toolbar).
     /// - Parameter textField: The text field instance to be cofigured.
     public func configure(textField: UITextField) {
-        if Self.isIPad {
+        if canUseInputAssistantItem {
             configure(inputAssistantItem: textField.inputAssistantItem)
         } else {
             textField.inputAccessoryView = inputAccessoryView
@@ -181,7 +185,7 @@ public class KeyboardAccessoryManager {
     ///   - enabled: Boolean value indicating whether the key is enabled.
     ///   - identifier: Identifier of menu item.
     public func setEnabled(_ enabled: Bool, for identifier: String) {
-        if Self.isIPad {
+        if canUseInputAssistantItem {
             if let item = identifiedActionItems[identifier] {
                 switch item {
                 case is UIAction:
@@ -210,6 +214,10 @@ public class KeyboardAccessoryManager {
 
     private static var isIPad: Bool {
         return UIDevice.current.userInterfaceIdiom == .pad
+    }
+
+    private var canUseInputAssistantItem: Bool {
+        preferInputAssistantItem && Self.isIPad
     }
 
 }
